@@ -93,7 +93,7 @@ session_start();
                     </div>
                 </div>
                 </form>
-                    <img src="../img/paypal.jpeg" alt="">
+                    <img src="../img/paypal.jpeg" width="250" alt="">
             </div>
 
             <div class="subCont2">
