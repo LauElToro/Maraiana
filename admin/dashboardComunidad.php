@@ -100,9 +100,6 @@ $courses = $conn->query("SELECT * FROM courses")->fetchAll();
 
 <nav>
     <div class="navCont">
-        <div class="btn-menu">
-			<label for="btn-menu">☰</label>
-		</div>
         <p>Panel de control</p>
         <img src="../img/dashtitulo.png" alt="">
         <div class="navSubCont">
@@ -113,30 +110,11 @@ $courses = $conn->query("SELECT * FROM courses")->fetchAll();
 </nav>
 <section class="dashboardSection">
 <div class="capa"></div>
-<!--	--------------->
-<input type="checkbox" id="btn-menu">
-<div class="container-menu">
-	<div class="cont-menu">
-    <p>Panel de control</p>
-    <img src="../img/Linea.png" alt="">
-        <ul class="ul1">
-        <li><a href="./dashboard.php">CREAR CURSO</a></li>
-            <li><a href="./dashboardEditarCurso.php">EDITAR CURSO</a></li>
-            <li><a href="./dashboardAlumnos.php">ALUMNOS</a></li>
-            <li><a href="./dashboardCombo.php">COMBO</a></li>
-            <li><a href="./dashboardComunidad.php">Comunidad</a></li>
-            <li><a href="./dashboardCoaching.php">Coaching</a></li>
-            <li><a href="./dashboardClasesGrupales.php">Clases grupales</a></li>
-            <li><a href="./dashboardInformacion.php">INFORMACION</a></li>
-        </ul>
-		<label for="btn-menu">✖️</label>
-	</div>
-</div>
-		
     <div class="dashboardLinks">
     <ul>
     <li><a href="./dashboard.php">CREAR CURSO</a></li>
             <li><a href="./dashboardEditarCurso.php">EDITAR CURSO</a></li>
+            <li><a href="./dashboardDetallesDeCurso.php">DETALLES DE CURSO</a></li>
             <li><a href="./dashboardAlumnos.php">ALUMNOS</a></li>
             <li><a href="./dashboardCombo.php">COMBO</a></li>
             <li><a href="./dashboardComunidad.php">Comunidad</a></li>
@@ -144,9 +122,6 @@ $courses = $conn->query("SELECT * FROM courses")->fetchAll();
             <li><a href="./dashboardClasesGrupales.php">Clases grupales</a></li>
             <li><a href="./dashboardInformacion.php">INFORMACION</a></li>
         </ul>
-    </div>
-    <div>
-        
     </div>
     <div class="dashboardCursos">
         <div class="dashboardComboCursos">

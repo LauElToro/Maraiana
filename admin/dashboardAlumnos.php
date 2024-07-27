@@ -26,13 +26,10 @@ $stmt_users = $conn->query("SELECT * FROM users")->fetchAll();
 <body>
     <nav>
     <div class="navCont">
-        <div class="btn-menu">
-			<label for="btn-menu">☰</label>
-		</div>
         <p>Panel de control</p>
         <img src="../img/dashtitulo.png" alt="">
         <div class="navSubCont">
-            <a href="">Ver Sitio</a>
+        <a href="../index.php">Ver Sitio</a>
             <img src="../img/pc.png" alt="">
         </div>
     </div>
@@ -40,28 +37,11 @@ $stmt_users = $conn->query("SELECT * FROM users")->fetchAll();
 <section class="dashboardSection">
 <div class="capa"></div>
 <!--	--------------->
-<input type="checkbox" id="btn-menu">
-<div class="container-menu">
-	<div class="cont-menu">
-    <p>Panel de control</p>
-    <img src="../img/Linea.png" alt="">
-    <ul class="ul1">
-            <li><a href="./dashboard.php">CREAR CURSO</a></li>
-            <li><a href="./dashboardEditarCurso.php">EDITAR CURSO</a></li>
-            <li><a href="./dashboardAlumnos.php">ALUMNOS</a></li>
-            <li><a href="./dashboardCombo.php">COMBO</a></li>
-            <li><a href="./dashboardComunidad.php">Comunidad</a></li>
-            <li><a href="./dashboardCoaching.php">Coaching</a></li>
-            <li><a href="./dashboardClasesGrupales.php">Clases grupales</a></li>
-            <li><a href="./dashboardInformacion.php">INFORMACION</a></li>
-        </ul>
-		<label for="btn-menu">✖️</label>
-	</div>
-</div>
 <div class="dashboardLinks">
         <ul>
             <li><a href="./dashboard.php">CREAR CURSO</a></li>
             <li><a href="./dashboardEditarCurso.php">EDITAR CURSO</a></li>
+            <li><a href="./dashboardDetallesDeCurso.php">DETALLES DE CURSO</a></li>
             <li><a href="./dashboardAlumnos.php">ALUMNOS</a></li>
             <li><a href="./dashboardCombo.php">COMBO</a></li>
             <li><a href="./dashboardComunidad.php">Comunidad</a></li>
@@ -70,12 +50,8 @@ $stmt_users = $conn->query("SELECT * FROM users")->fetchAll();
             <li><a href="./dashboardInformacion.php">INFORMACION</a></li>
         </ul>
 </div>
-        <div class="capa"></div>
-        <!-- Menú lateral -->
-        <!-- Tu menú lateral -->
-        
-        <!-- Contenido principal -->
-        
+<div class="dashboardCont">
+        <!-- Contenido principal -->  
         <div class="dashboardEditarCursos">
             <h2 class="registrosH2">Usuarios Registrados</h2>
 
@@ -99,6 +75,7 @@ $stmt_users = $conn->query("SELECT * FROM users")->fetchAll();
                 </table>
             </div>
         </div>
+    </div>
     </section>
 </body>
 

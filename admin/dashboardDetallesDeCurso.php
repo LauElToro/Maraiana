@@ -68,6 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insertar Detalles de Curso</title>
     <link rel="stylesheet" href="../css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         form {
             max-width: 600px;
@@ -104,6 +105,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-color: #dc3545;
             color: white;
             border: none;
+            font-size: 20px;
+            border-radius: 10px;
             padding: 5px 10px;
             cursor: pointer;
         }
@@ -132,9 +135,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 <nav>
         <div class="navCont">
-            <div class="btn-menu">
-                <label for="btn-menu">☰</label>
-            </div>
             <p>Panel de control</p>
             <img src="../img/dashtitulo.png" alt="">
             <div class="navSubCont">
@@ -158,7 +158,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <li><a href="./dashboardInformacion.php">INFORMACION</a></li>
             </ul>
         </div>
-    <div class="dashboardCont">       
+    <div class="dashboardCont">      
     <h2 class="detallesH2">Insertar Detalles de Curso</h2>
     <?php
     // Mostrar mensajes de éxito o error
