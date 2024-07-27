@@ -1,0 +1,238 @@
+
+
+.bgPreguntas{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.navBtn2{
+    display: none;
+    background-color: #34114B;
+    padding: 15px;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+}
+.navBtn{
+    display: flex;
+    background-color: #34114B;
+    padding: 15px;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+}
+.escritorioButtons{
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 15%;
+    height: 70vh;
+    background-color: #D9D9D9;
+    border-radius: 0px 20px 20px 0px;
+}
+.escritorioButtons button{
+    width: 80%;
+    height: 60px;
+    margin-top: 4%;
+    margin-bottom: 5%;
+    border-radius: 20px;
+    border: none;
+    background-color: #743C99;
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+}
+.escritorioButtons a{
+    color: #fff;
+}
+.preguntasData{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+    margin: auto;
+    width: 65%;
+    height: 60vh;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+}
+.preguntasDataCont{
+    width: 90%;
+    padding: 15px;
+    background-color: #fff;
+    margin-top: 5%;
+    border-radius: 20px;
+}
+.preguntasDataCont strong{
+    font-size: 13px;
+    font-weight: 800;
+}
+.preguntasDataCont p{
+    margin-top: 2%;
+    font-size: 16px;
+    font-weight: 500;
+}
+.preguntasData button{
+    margin-top: 5%;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #743C99;
+    border: none;
+}
+.preguntasData a{
+    color: #fff;
+    font-weight: 700;
+}
+
+footer{
+    margin-top: 5%;
+    width: 100%;
+    height: 40vh;background: linear-gradient(0deg, #3B035F 0%, #092C64 100%);
+}
+.footerImg{
+    margin-top: 2%;
+}
+.footerCont{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.footerCont h3{
+    color: #fff;
+    margin-bottom: 10%;
+}
+.footerCont a{
+    color: #fff;
+    padding: 6px;
+}
+.footerLinks{
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.footerRedes{
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.footerContacto{
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+@media (max-width: 768px){
+.bgPreguntas{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.btnWebEsc{
+    display: none;
+}
+.escritorioButtons{
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    height: 85vh;
+    background-color: #11264A;
+    border-radius: 0px 20px 20px 0px;
+}
+.escritorioButtons button{
+    width: 80%;
+    height: 50px;
+    margin-top: 14%;
+    margin-bottom: 5%;
+    border-radius: 20px;
+    border: 3px solid #6EA6FF;
+    background-color: #743C99;
+    color: #fff;
+    font-weight: 700;
+}
+.escritorioButtons a{
+    color: #fff;
+}
+.preguntasData{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+    width: 65%;
+    height: 82vh;
+    border: 2px solid #000;
+    border-radius: 20px;
+    background-color: #fff;
+}
+.preguntasDataCont{
+    padding: 15px;
+    background-color: #D9D9D9;
+    margin-top: 5%;
+    border-radius: 20px;
+}
+.preguntasDataCont strong{
+    font-size: 13px;
+    font-weight: 800;
+}
+.preguntasDataCont p{
+    margin-top: 2%;
+    font-size: 13px;
+    font-weight: 500;
+}
+.preguntasData button{
+    margin-top: 5%;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #743C99;
+    border: none;
+}
+.preguntasData a{
+    color: #fff;
+    font-weight: 700;
+}
+.navBtn{
+    display: none;
+    background-color: #34114B;
+    padding: 15px;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+}
+.navBtn2{
+    display: flex;
+    background-color: #34114B;
+    padding: 15px;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+}
+footer{
+    margin-top: 25%;
+    width: 100%;
+    height: 125vh;
+    background: linear-gradient(0deg, #3B035F 0%, #092C64 100%);
+}
+.footerCont{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.footerImg{
+    margin-top: 15%;
+}
+.footerLinks{
+    margin-top: 10%;
+}
+.footerRedes{
+    margin-top: 10%;
+}
+.footerContacto{
+    margin-top: 10%;
+}
+}

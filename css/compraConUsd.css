@@ -1,0 +1,170 @@
+.bgCont1{
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+form{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+form .inputCont{
+    width: 100%;
+}
+.inputCont{
+    width: 100%;
+    padding: 2%;
+}
+.subCont1{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.inputCont input{
+    width: 100%;
+    padding: 15px 45px 15px 45px;
+    font-style: italic;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+.inputCont2{
+    width: 100%;
+    padding: 2%;
+}
+.inputCont2 input{
+    width: 100%;
+    padding: 15px 45px 15px 45px;
+    font-style: italic;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+.inputSubCont2{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.inputSubCont1{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.subCont2{
+    margin-top: -5%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #E1EDFF;
+}
+.bgSubCont1{
+    margin-top: 15%;
+    margin-bottom: 15%;
+}
+
+footer{
+    margin-top: 5%;
+    width: 100%;
+    height: 40vh;background: linear-gradient(0deg, #3B035F 0%, #092C64 100%);
+}
+.footerImg{
+    margin-top: 2%;
+}
+.footerCont{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.footerCont h3{
+    color: #fff;
+    margin-bottom: 10%;
+}
+.footerCont a{
+    color: #fff;
+    padding: 6px;
+}
+.footerLinks{
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.footerRedes{
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.footerContacto{
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (max-width: 768px){
+    .bgCont1{
+        width: 100%;
+        margin-top: 15%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    form .inputCont{
+        width: 100%;
+    }
+    .inputCont{
+        padding: 5%;
+    }
+    .inputCont input{
+        padding: 15px 45px 15px 45px;
+        font-style: italic;
+        border-radius: 10px;
+        border: 1px solid #000;
+    }
+    footer{
+        margin-top: 25%;
+        width: 100%;
+        height: 20vh;
+        background: linear-gradient(0deg, #A262D5 0%, #0E2E68 100%);
+    }
+    .bgSubCont1{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .bgSubCont1 h4{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .bgSubCont2{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .bgSubCont2 h4{
+        margin-bottom: 5%;
+    }
+    .bgSubCont2 p{
+        margin-top: 5%;
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .bgSubCont2Web{
+        display: none;
+    }
+    .arsBtn{
+        display: none;
+    }
+    .usdImg{
+        visibility: hidden;
+    }
+    }

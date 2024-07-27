@@ -1,0 +1,551 @@
+*{
+    font-family: "Montserrat", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*ESTILOS DEL NAV*/
+nav{
+    background-color: #34114B;
+    padding: 5px 0px;
+}
+nav p{
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+}
+.navCont{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20%;
+}
+.navSubCont{
+    display: flex;
+    align-items: center;
+}
+.navSubCont a{
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    text-decoration: none;
+}
+@media screen and (max-width: 991px) {
+    .navCont{
+        gap: 0%;
+    }
+}
+/*ESTILOS DEL BUTTON RESPONSIVO*/
+#btn-menu{
+    display: none;
+}
+.btn-menu{
+    display: none;
+}
+.container-menu{
+    position: absolute;
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    top: 0;left: 0;
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+#btn-menu:checked ~ .container-menu{
+    opacity: 1;
+    visibility: visible;
+}
+.cont-menu{
+    width: 100%;
+    max-width: 250px;
+    background: #1c1c1c;
+    height: 100vh;
+    position: relative;
+    transition: all 500ms ease;
+    transform: translateX(-100%);
+}
+#btn-menu:checked ~ .container-menu .cont-menu{
+    transform: translateX(0%);
+}
+.cont-menu nav a{
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    color: #c7c7c7;
+    border-left: 5px solid transparent;
+    transition: all 400ms ease;
+}
+.cont-menu label{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+}
+.navCont p{
+    display: flex;
+}
+@media screen and (max-width: 991px) {
+    .btn-menu{
+        display: flex;
+        font-size: 35px;
+        margin-left: -5%;
+    }
+    .navCont p{
+        display: none;
+    }
+    .cont-menu{
+        background-color: #0E2E68;
+    }
+    .cont-menu p{
+        padding-top: 15%;
+        padding-bottom: 5%;
+        text-align: center;
+        color: #fff;
+        font-size: 25px;
+    }
+    .cont-menu img{
+        width: 100%;
+    }
+    .ul1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 95%;
+        padding-top: 5%;
+    }
+    .ul1 li{
+        margin-bottom: 5%;
+        width: 95%;
+        text-align: center;
+        background-color: #6EA6FF;
+        padding: 15px 0px;
+        border-radius: 20px;
+    }
+    .ul1 li a{
+        text-align: center;
+        text-decoration: none;
+        font-size: 20px;
+        color: #fff;
+    }
+}
+
+/*ESTILOS DE DASHBOARD GENERAL*/
+.dashboardSection{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.dashboardLinks{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: 120vh;
+    background-color: #0E2E68;
+    padding-top: 5%;
+}
+.dashboardLinks li{
+    margin-bottom: 15%;
+    list-style: none;
+    background-color: #6EA6FF;
+    padding: 15px 15px;
+    border-radius: 20px;
+}
+.dashboardLinks a{
+    color: #000;
+    font-weight: 700;
+    font-size: 25px;
+    text-decoration: none;
+}
+.dashboardCont{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (max-width:1199px) {
+    .dashboardLinks a{
+        font-size: 18px;
+        text-decoration: none;
+    }
+}
+@media screen and (max-width:991px) {
+    .dashboardLinks{
+        display: none;
+    }
+    .dashboardSection{
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .dashboardLinks{
+        height: 80vh;
+        background-color: #0E2E68;
+    }
+}
+@media screen and (max-width: 767px) {
+    
+}
+/*ESTILO DE CREAR CURSO*/
+.dashboardCursos{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.dashboardCursosSubCont{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.cursoH2{
+    font-size: 30px;
+    display: flex;
+    text-align: left;
+    margin-bottom: 5%;
+}
+.formSubCont1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.formSubCont1 label{
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+.formSubCont2{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+.formSubCont2 label{
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+.formSubCont2Titulo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#course_name{
+    margin-left: 5%;
+    font-size: 20px;
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+#item_name{
+    font-size: 20px;
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 20px;
+}
+.submit_btn{
+    background-color: #34114B;
+    margin-left: 5%;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 25px;
+    color: #fff;
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer;
+}
+#description{
+    width: 100%;
+    height: 15vh;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 18px;
+}
+.precioCont{
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.precioCard{
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+}
+.precioCard p{
+    font-weight: 700;
+}
+.precioData{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    width: 200px;
+}
+.precioData input{
+    border: none;
+    font-size: 30px;
+    width: 150px;
+    color: #000;
+    background-color: #D9D9D9;
+}
+.textLabel{
+    font-weight: 700;
+}
+.cursoInput{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    padding-bottom: 2%;
+}
+.cursoInput input{
+    background-color: #D9D9D9;
+    border: none;
+    font-size: 20px;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+.cursoInput select{
+    background-color: #D9D9D9;
+    border: none;
+    font-size: 20px;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+.btnCont{
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btnCont input{
+    font-size: 25px;
+}
+/*ESTILO DE EDITAR CURSO*/
+
+.dashboardEditarCursos{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.editarCursosCard{
+    padding:  2% 10%;
+    border-radius: 30px;
+}
+.cursoExistenteCard{
+    background-color: #D9D9D9;
+    padding:  2% 10%;
+    border-radius: 30px;
+}
+.deleteInput{
+    background-color: #EC1010;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.editInput{
+    background-color: #34114B;
+    margin-left: 5%;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 25px;
+    color: #fff;
+    font-weight: 800;
+    font-size: 20px;
+    cursor: pointer;
+}
+.editarBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.formCont{
+    margin-bottom: 10%;
+}
+.editarCursoCont{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    padding-bottom: 2%;
+}
+.editarCursoCont label{
+    font-size: 18px;
+    font-weight: 700;
+}
+.editarCursoCont input{
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    padding: 5px 25px;
+}
+.editarCursoCont textarea{
+    border: none;
+    border-radius: 20px;
+    background-color: #D9D9D9;
+    padding: 15px;
+    font-size: 18px;
+}
+.editarCursosTitulo{
+    font-size: 25px;
+    padding-bottom: 5px;
+}
+/*ALUMNOS*/
+
+.alumnosCard{
+    background-color: #D9D9D9;
+    display: flex;
+    flex-direction: row;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 5%;
+}
+.registrosH2{
+    margin-bottom: 5%;
+}
+.row1{
+    color: #34114B;
+    font-weight: 600;
+}
+.row1 td{
+    padding: 0px 65px;
+}
+.row2{
+    color: #000000;
+    font-weight: 600;
+}
+.row2 td{
+    padding: 0px 65px;
+}
+.alumnosBtn{
+    background-color: #000;
+    color: #fff;
+    padding: 0px 25px;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+/*COMBO DE CURSOS*/
+.dashboardComboCursos form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.formData1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.formData2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.formData1 label{
+    font-weight: 700;
+    text-align: left;
+    font-size: 24px;
+}
+.formData2 label{
+    font-weight: 700;
+    text-align: left;
+    font-size: 24px;
+}
+.formData2 input{
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 20px;
+    text-align: center;
+}
+.formBtn{
+    margin-top: 5%;
+    background-color: #743C99;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    color: #fff;
+    padding: 10px 0px;
+    width: 200px;
+}
+/*INFORMACION*/
+.dashboardCards {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea */
+    justify-content: space-around; /* Distribuye las tarjetas con espacio alrededor */
+    gap: 20px; /* Añade espacio entre las tarjetas (opcional) */
+}
+
+.infoCard {
+    flex: 1 1 calc(50% - 40px); /* Permite que cada tarjeta ocupe el 50% del ancho menos el espacio del gap */
+    box-sizing: border-box; /* Asegura que el padding y border se incluyan en el ancho y alto total */
+    padding: 20px;
+    margin: 10px; /* Espacio interno de la tarjeta */
+    border: 1px solid #ccc; /* Borde de la tarjeta (opcional) */
+    text-align: center; /* Centra el texto dentro de la tarjeta */
+}
+
+/*DETALLES DE CURSOS*/
+.detallesH2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.detallesForm{
+    border: none;
+}
+.detallesForm label{
+    font-weight: 700;
+    font-size: 20px;
+}
+.detallesForm textarea{
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 10px;
+    width: 400px;
+    height: 200px;
+    padding: 8px;
+}
+.syllabus-item input{
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 20px;
+    padding: 8px;
+}
+.detallesBtn{
+    background-color: #34114B;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 22px;
+}

@@ -1,0 +1,429 @@
+*{
+    font-family: "Montserrat", sans-serif;
+}
+section{
+    background-color: #fff;
+}
+.courseImg{
+    width: 400px;
+    height: 400px;
+}
+.bgCont1{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    position: relative;
+}
+.mandalaCursos{
+    position: absolute;
+    top: 100%;
+    left: 25%;
+}
+.imgCursos2{
+    display: none;
+}
+.imgCursos1{
+    margin-left: -15%;
+    width: 100%;
+    border-radius: 20px;
+}
+.bgSubCont1{
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.bgSubCont2{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.bgH4Cont{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+    margin-top: 5%;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 35px;
+}
+.bgH4Cont h4{
+    font-size: 35px;
+    font-weight: 800;
+}
+.bgPCont{
+    margin-top: 3%;
+    width: 60%;
+    text-align: center;
+    color: #34114B;
+    font-weight: 700;
+    font-size: 25px;
+}
+.bgBtnCont{
+    position: relative;
+    margin-top: 5%;
+}
+.bgBtnCont button{
+    background-color: #743C99;
+    color: #fff;
+    padding: 15px 20px 15px 20px;
+    font-weight: 700;
+    border: none;
+    font-size: 28px;
+    border-radius: 20px;   
+    cursor: pointer;
+    text-decoration: none;
+}
+.bgBtnCont img{
+    position: absolute;
+    top: 28%;
+    left: 6%;
+}
+
+.bgCont2{
+    margin-top: 15%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.cursoBg{
+    width: 100%;
+    height: 50vh;
+    background: linear-gradient(0deg, #B62BE680 0%, #024AAE80 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    border-radius: 20px;
+}
+.cursoImg{
+    width: 400px;
+    height: 400px;
+}
+.comboCursosBg{
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 5%;
+}
+
+.comboBtn{
+    margin-top: 3%;
+    background-color: #3B035F;
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.comboBtn a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.carousel{
+    display: none;
+    visibility: hidden;
+}
+  /* CSS para el dropdown */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    margin-top: -1%;
+    display: none;
+    position: absolute;
+    background-color: #743C99;
+    min-width: 200px;
+    z-index: 1;
+    padding: 10px;
+    text-align: center;
+}
+.dropdown-content li{
+    padding: 2px;
+}
+.dropdown-content a {
+    color: #fff;
+    background-color: #0C2D65;
+    text-decoration: none;
+    display: block;
+    height: 80px;
+    width: 180px;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 0px 10px 0px 10px;
+    border-radius: 20px;
+}
+.subContModal{
+    position: relative;
+    background: linear-gradient(0deg, #D895F2 0%, #82A4D7 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.closeIconModal{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+.divModalImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#modalImg{
+    width: 50%;
+}
+.modalContent{
+    color: #000;
+}
+.modalContent h2{
+    margin-left: 5px;
+}
+.modalContent p{
+    margin-left: 5px;
+}
+#btnVerMas{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/*footer CSS*/
+footer{
+    width: 100%;
+    height: 40vh;background: linear-gradient(0deg, #3B035F 0%, #092C64 100%);
+}
+.footerImg{
+    margin-top: 2%;
+}
+.footerCont{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.footerCont h3{
+    color: #fff;
+    margin-bottom: 10%;
+}
+.footerCont a{
+    color: #fff;
+    padding: 6px;
+    text-decoration: none;
+}
+.footerLinks{
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.footerRedes{
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.footerContacto{
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+@media (max-width: 1199px){
+  .bgCont1{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .imgCursos1{
+    display: flex;
+    justify-content: center;
+  }
+  .mandalaCursos{
+    display: none;
+  }
+  .bgImgCont{
+    width: 100%;
+  }
+  .comboCursosBg img{
+    width: 900px;
+  }
+  .imgCursos1{
+    width: 900px;
+    border-radius: 20px;
+    margin-left: 1%;
+  }
+  .bgH4Cont{
+    width: 60%;
+  }
+  .bgPCont{
+    width: 60%;
+  }
+}
+
+@media (max-width: 991px) {
+
+    .carousel{
+        display: flex;
+        visibility: visible;
+        padding: 45px 0px 45px 0px;background: linear-gradient(0deg, #B62BE680 0%, #024AAE80 100%);
+    }
+    .carruselCont{
+        margin-top: 5%;
+    }
+    .bgCont1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 3%;
+    }
+    .imgCursos1{
+        display: none;
+    }
+    .imgCursos2{
+        display: flex;
+        width: 550px;
+    }
+    .bgSubCont2{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .bgH4Cont {
+        margin-top: 5%;
+        font-size: 18px;   
+    }
+    .bgPCont{
+        margin-top: 5%;
+        width: 85%;
+        text-align: center;
+        font-weight: 700;
+    }
+    .bgPCont p{
+        color: #34114B;
+    }
+    .bgBtnCont{
+        position: relative;
+        margin-top: 5%;
+    }
+    .bgBtnCont button{
+        background-color: #743C99;
+        color: #fff;
+        padding: 15px 20px 15px 32px;
+        font-weight: 700;
+        border: none;
+        border-radius: 20px; 
+        text-decoration: none;  
+    }
+    .bgBtnCont img{
+        position: absolute;
+        top: 28%;
+        left: 6%;
+    }
+
+/*¨SEGUNDA SECCION DE CURSOS */
+
+.bgCont2{
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.mandalaCursos{
+    display: none;
+}
+.cursoBg{
+    width: 100%;
+    background: linear-gradient(0deg, #B62BE680 0%, #024AAE80 100%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+}
+.comboCursosBg{
+    margin-top: 25%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.comboCursosBg img{
+    width: 700px;
+}
+footer{
+    width: 100%;
+    height: 20vh;
+    background: linear-gradient(0deg, #A262D5 0%, #0E2E68 100%);
+}
+.imgCurso3{
+    display: none;
+}
+.imgCurso2{
+    display: none;
+}
+footer{
+    margin-top: 25%;
+    width: 100%;
+    height: 155vh;
+    background: linear-gradient(0deg, #3B035F 0%, #092C64 100%);
+}
+.footerCont{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.footerImg{
+    margin-top: 20%;
+}
+.footerLinks{
+    margin-top: 10%;
+}
+.footerRedes{
+    margin-top: 10%;
+}
+.footerContacto{
+    margin-top: 10%;
+}
+
+@media(max-width: 767px){
+    .comboCursosBg{
+        width: 100%;
+    }
+    .comboCursosBg img{
+        width: 455px;
+    }
+    .imgCursos2{
+        display: flex;
+        width: 450px;
+    }
+}
+@media (max-width: 480px){
+    .comboCursosBg img{
+        width: 350px;
+    }
+    .imgCursos2{
+        display: flex;
+        width: 350px;
+    }
+    .courseImg{
+        width: 300px;
+        height: 300px;
+    }
+}
+}

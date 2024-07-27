@@ -1,0 +1,547 @@
+*{
+    font-family: "Montserrat", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+nav{
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(0deg, #743C99 0%, #092C64 100%); 
+    border-radius: 0px 0px 20px 20px;
+    
+}
+.redesNavbar{
+    background-color: #1F052F;
+    height: 40px;
+    position: relative;
+}
+.redesNavbar img{
+    position: absolute;
+}
+.youtubeLink{
+    left: 1722px;
+    margin-top: 8px;
+    width: 23px;
+}
+.instagramLink{
+    left: 1755px;
+    margin-top: 7px;
+}
+.wasapLink{
+    left: 1790px;
+    margin-top: 9px;
+}
+.tiktokLink{
+    left: 1815px;
+    margin-top: 5px;
+
+}
+
+.linkedinLink {
+    left: 1690px;
+    margin-top: 5px;
+    width: 23px;
+}
+
+.enlace{
+    position: absolute;
+    padding: 20px 50px;
+   
+}
+.Logo{
+    visibility: hidden;
+    height: 40px;
+   
+}
+
+.Logo2{
+ margin-top: -10px;
+}
+
+nav ul{
+    margin-right: 20px;
+    text-align: center;
+}
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    padding: 0px 10px 0px 10px;
+
+}
+nav ul li a{
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 20px;
+    cursor: pointer;
+    display: none;
+}
+.navBtn2{
+    display: none;
+    background-color: #34114B;
+    padding: 15px;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+}
+.navBtn{
+    display: flex;
+    background-color: #34114B;
+    padding: 15px;
+    border: none;
+    color: #fff;
+    margin-top: 15%;
+    border-radius: 20px;
+}
+#check{
+    display: none;
+}
+  /* CSS para el dropdown */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    margin-top: -1%;
+    display: none;
+    position: absolute;
+    background-color: #743C99;
+    min-width: 200px;
+    z-index: 1;
+    padding: 10px;
+    text-align: center;
+}
+.dropdown-content li{
+    padding: 2px;
+}
+.dropdown-content a {
+    color: #fff;
+    background-color: #0C2D65;
+    text-decoration: none;
+    display: block;
+    height: 80px;
+    width: 180px;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 0px 10px 0px 10px;
+    border-radius: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media (max-width: 1919px){
+  
+.redesNavbar{
+    display: block;
+    background-color: #1F052F;
+    height: 40px;
+    position: relative;
+} 
+
+.linkedinLink {
+    left: 83%;
+    margin-top: 5px;
+    width: 23px;
+}
+
+.youtubeLink{
+    left: 86%;
+    margin-top: 8px;
+}
+.instagramLink{
+    left: 89%;
+    margin-top: 7px;
+}
+.wasapLink{
+    left: 92%;
+    margin-top: 9px;
+}
+.tiktokLink{
+    left: 94%;
+    margin-top: 5px;
+
+} 
+}
+
+@media (max-width: 1199px){
+ 
+    .redesNavbar{
+        display: none;
+        visibility: hidden;
+    }
+    .Logo2{
+        visibility: hidden;
+    }
+    .Logo{
+        visibility: visible;
+        position: absolute;
+        left: 10%;
+    }
+    .checkbtn{
+        display: block;
+    }
+    .checkbtn img{
+        position: absolute;
+        left: 92%;
+        top: 20%;
+        width: 40px;
+        height: 50px;
+    } 
+    nav{
+        z-index: 1500;
+        position: relative;
+        height: 90px;
+    }  
+    nav ul{
+        position: fixed;
+        width: 100%;
+        height: 430px;
+        background: linear-gradient(0deg, #0E2D66 0%, #4C1271 100%);
+        top: -430px;
+        text-align: center;
+        transition: all .5s;
+        z-index: 1500;
+    }
+    nav ul li{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    .liBtn{
+        float: none;
+        margin-left: 0%;
+    }
+    .liBtn button{
+        background-color: #743C99;
+        padding: 15px;
+        border-radius: 20px;
+        border: none;
+        color: #fff;
+        font-weight: 600;
+        float: none;
+    }
+    #check:checked ~ ul{
+        top: 10%;
+        position: static;
+        padding-top: 10%;
+    }
+      /* CSS para el dropdown */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    
+}
+
+.dropdown-content {
+    margin-top: -1%;
+    display: none;
+    position: absolute;
+    background-color: #743C99;
+    height: 40vh;
+    left: -1%;
+    top: 100%;
+    z-index: 1;
+    padding: 10px;
+    text-align: center;
+}
+.dropdown-content li{
+    padding: 2px;
+}
+.dropdown-content a {
+    color: #fff;
+    background-color: #0C2D65;
+    text-decoration: none;
+    display: block;
+    height: 80px;
+    width: 180px;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 0px 10px 0px 10px;
+    border-radius: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.navBtn{
+    display: none;
+    background-color: #34114B;
+    padding: 15px;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+}
+.navBtn2{
+    display: flex;
+    background-color: #34114B;
+    padding: 15px;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+}
+}
+
+
+@media (max-width: 1000px){
+ 
+    .redesNavbar{
+        display: none;
+        visibility: hidden;
+    }
+    .Logo2{
+        visibility: hidden;
+    }
+    .Logo{
+        visibility: visible;
+        position: absolute;
+        left: 10%;
+    }
+    .checkbtn{
+        display: block;
+    }
+    .checkbtn img{
+        position: absolute;
+        left: 90%;
+        top: 20%;
+        width: 40px;
+        height: 50px;
+    } 
+    nav{
+        z-index: 1500;
+        position: relative;
+        height: 90px;
+    }  
+    nav ul{
+        position: fixed;
+        width: 100%;
+        height: 330px;
+        background: linear-gradient(0deg, #0E2D66 0%, #4C1271 100%);
+        top: -330px;
+        text-align: center;
+        transition: all .5s;
+        z-index: 1500;
+    }
+    nav ul li{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    .liBtn{
+        float: none;
+        margin-left: 0%;
+    }
+    .liBtn button{
+        background-color: #743C99;
+        padding: 15px;
+        border-radius: 20px;
+        border: none;
+        color: #fff;
+        font-weight: 600;
+        float: none;
+    }
+    #check:checked ~ ul{
+        top: 10%;
+        position: static;
+        padding-top: 10%;
+    }
+      /* CSS para el dropdown */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    
+}
+
+.dropdown-content {
+    margin-top: -10px;
+    display: none;
+    position: absolute;
+    background-color: #743C99;
+    width:100%;
+    height: 260px;
+    left: 0px;
+    top: 100%;
+    z-index: 1;
+    
+    text-align: center;
+}
+.dropdown-content li{
+    padding: 2px;
+}
+.dropdown-content a {
+    color: #fff;
+    background-color: #0C2D65;
+    text-decoration: none;
+    display: block;
+    height: 80px;
+    width: 180px;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 0px 10px 0px 10px;
+    border-radius: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.navBtn{
+    display: none;
+    background-color: #34114B;
+    padding: 15px;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+}
+.navBtn2{
+    display: flex;
+    background-color: #34114B;
+    padding: 15px;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+}
+}
+
+@media (max-width: 767px) {
+    .redesNavbar{
+        display: none;
+        visibility: hidden;
+    }
+    .Logo2{
+        display: none;
+    }
+    .Logo{
+        visibility: visible;
+        position: absolute;
+        left: 20%;
+    }
+    .checkbtn{
+        display: block;
+    }
+    .checkbtn img {
+        position: absolute;
+        left: 84%;
+        top: 20%;
+        width: 30px;
+        height: 40px;
+     } 
+
+     
+    nav{
+        z-index: 1500;
+        position: relative;
+        height: 90px;
+    }  
+    nav ul{
+        position: fixed;
+        width: 100%;
+        height: 350px;
+        background: linear-gradient(0deg, #0E2D66 0%, #4C1271 100%);
+        top: -350px;
+        text-align: center;
+        transition: all .5s;
+        z-index: 1500;
+    }
+    nav ul li{
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    .liBtn{
+        float: none;
+        margin-left: 0%;
+    }
+    .liBtn button{
+        background-color: #743C99;
+        padding: 15px;
+        border-radius: 20px;
+        border: none;
+        color: #fff;
+        font-weight: 600;
+        float: none;
+    }
+    #check:checked ~ ul{
+        top: 10%;
+        position: static;
+        padding-top: 10%;
+    }
+      /* CSS para el dropdown */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    
+}
+
+.dropdown-content {
+    margin-top: -2%;
+    display: none;
+    position: absolute;
+    background-color: #743C99;
+    height: 240px;
+    left: 0px;
+    top: 100%;
+    z-index: 1;
+    padding: 10px;
+    text-align: center;
+    
+}
+.dropdown-content li{
+    padding: 2px;
+}
+.dropdown-content a {
+    color: #fff;
+    background-color: #0C2D65;
+    text-decoration: none;
+    display: block;
+    height: 80px;
+    width: 180px;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 0px 10px 0px 10px;
+    border-radius: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.navBtn{
+    display: none;
+    background-color: #34114B;
+    padding: 15px;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+}
+.navBtn2{
+    display: flex;
+    background-color: #34114B;
+    padding: 15px;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+}
+}

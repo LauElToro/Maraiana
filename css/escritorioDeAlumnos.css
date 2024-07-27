@@ -1,0 +1,324 @@
+*{
+    font-family: "Montserrat", sans-serif;
+}
+
+.bgEscritorio{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.escritorioButtons{
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 15%;
+    height: 70vh;
+    background-color: #D9D9D9;
+    border-radius: 0px 20px 20px 0px;
+}
+.escritorioButtons button{
+    width: 80%;
+    height: 60px;
+    margin-top: 4%;
+    margin-bottom: 5%;
+    border-radius: 20px;
+    background-color: #743C99;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+}
+.escritorioButtons a{
+    color: #fff;
+}
+.escritorioData{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    margin-top: 8%;
+    margin-right: 10%;
+    width: 65%;
+    height: 60vh;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+}
+
+.data1{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 20%;
+    height: 15vh;
+    background-color: #092C64;
+    color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+}
+.data1 img{
+    position: absolute;
+    top: 30%;
+}
+.data1 p{
+    margin-top: 30%;
+    margin-left: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 15px;
+}
+.data2{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 20%;
+    height: 15vh;
+    background-color: #092C64;
+    color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+}
+.data2 img{
+    position: absolute;
+    top: 30%;
+}
+.data2 p{
+    margin-top: 30%;
+    margin-left: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 15px;
+}
+.data3{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 20%;
+    height: 15vh;
+    background-color: #092C64;
+    color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+}
+.data3 img{
+    position: absolute;
+    top: 30%;
+}
+.data3 p{
+    margin-top: 30%;
+    margin-left: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 15px;
+}
+footer{
+    margin-top: 5%;
+    width: 100%;
+    height: 40vh;background: linear-gradient(0deg, #3B035F 0%, #092C64 100%);
+}
+.footerImg{
+    margin-top: 2%;
+}
+.footerCont{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.footerCont h3{
+    color: #fff;
+    margin-bottom: 10%;
+}
+.footerCont a{
+    color: #fff;
+    padding: 6px;
+}
+.footerLinks{
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.footerRedes{
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.footerContacto{
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+
+.bgEscritorio{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.escritorioButtons{
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    height: 84vh;
+    background-color: #11264A;
+    border-radius: 0px 20px 20px 0px;
+}
+.escritorioButtons button{
+    width: 80%;
+    height: 55px;
+    margin-top: 14%;
+    border-radius: 20px;
+    border: 3px solid #6EA6FF;
+    background-color: #743C99;
+    color: #fff;
+    font-weight: 700;
+}
+.escritorioButtons a{
+    color: #fff;
+}
+.escritorioData{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+    margin: auto;
+    width: 65%;
+    height: 60vh;
+    border: 2px solid #000;
+    border-radius: 20px;
+}
+.data1{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 50%;
+    height: 15vh;
+    background-color: #092C64;
+    color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+}
+.data1 img{
+    position: absolute;
+    top: 30%;
+}
+.data1 p{
+    margin-top: 40%;
+    margin-left: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 12px;
+}
+.data2{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 50%;
+    height: 15vh;
+    background-color: #092C64;
+    color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+}
+.data2 img{
+    position: absolute;
+    top: 30%;
+}
+.data2 p{
+    margin-top: 40%;
+    margin-left: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 12px;
+}
+.data3{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 50%;
+    height: 15vh;
+    background-color: #092C64;
+    color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+}
+.data3 img{
+    position: absolute;
+    top: 30%;
+}
+.data3 p{
+    margin-top: 40%;
+    margin-left: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 12px;
+}
+footer{
+    margin-top: 25%;
+    width: 100%;
+    height: 125vh;
+    background: linear-gradient(0deg, #3B035F 0%, #092C64 100%);
+}
+.footerCont{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.footerImg{
+    margin-top: 15%;
+}
+.footerLinks{
+    margin-top: 10%;
+}
+.footerRedes{
+    margin-top: 10%;
+}
+.footerContacto{
+    margin-top: 10%;
+}
+}

@@ -1,0 +1,161 @@
+*{
+    font-family: "Montserrat", sans-serif;
+}
+/*Login CSS*/
+
+#popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    padding: 20px;
+    z-index: 1000;
+}
+#popupOverlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.loginData{
+    border-radius: 20px;
+    width: 100%;
+    background: linear-gradient(0deg, #D895F2 0%, #82A4D7 100%);
+    display: flex;
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.loginData h2{
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+.loginData img{
+    width: 100%;
+}
+form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 5%;
+}
+form .inputName{
+    width: 80%;
+    margin-top: 5%;
+    padding: 15px;
+    border-radius: 20px;
+    border: none;
+}
+form .inputEmail{
+    width: 80%;
+    margin-top: 5%;
+    padding: 15px;
+    border-radius: 20px;
+    border: none;
+}
+form .inputPassword{
+    width: 80%;
+    margin-top: 5%;
+    padding: 15px;
+    border-radius: 20px;
+    border: none;
+}
+form .inputSubmit{
+    margin-bottom: 5%;
+    padding: 15px;
+    border-radius: 20px;
+    border: 1px solid #000;
+    background-color: #602B83;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 900;
+}
+form label{
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.loginData p{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 5%;
+}
+.loginData a{
+    font-weight: 700;
+}
+/*Register CSS*/
+
+#popup2 {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    padding: 20px;
+    z-index: 1000;
+}
+.registerData{
+    border-radius: 20px;
+    width: 100%;
+    background: linear-gradient(0deg, #D895F2 0%, #82A4D7 100%);
+    display: flex;
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.registerData h2{
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+.registerData img{
+    width: 100%;
+}
+.registerData p{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 5%;
+}
+.registerData a{
+    font-weight: 700;
+}
+
+/* Estilos para el botón 'X' dentro del popup */
+.closeButton {
+    position: absolute;
+    top: 5%;
+    left: 90%;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #000;
+}
+.closeButton:hover {
+    color: #ff0000; /* Cambia el color al pasar el mouse por encima */
+}
+
+@media screen and (max-width: 767px) {
+    #popup {
+        display: none;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 95%;
+        padding: 20px;
+        z-index: 1000;
+    }
+}

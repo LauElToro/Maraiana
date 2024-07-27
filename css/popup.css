@@ -1,0 +1,341 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body{
+    background: #efefef;
+}
+#btn-modal{
+    display: none;
+}
+.containerModal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0; left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+.contentModal{
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 70vh;
+    background: linear-gradient(0deg, #D895F2 0%, #82A4D7 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.contentModal h2{
+    margin-bottom: 15px;
+}
+.contentModal img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 220px;
+    height: 220px;
+}
+.btnCerrar{
+    position: absolute;
+    top: 2%;
+    left: 93%;
+}
+.popupImg{
+    margin-top: -15%;
+}
+.btnCerrar button{
+    background: none;
+    border: none;
+    color: #fff;
+    font-weight: 900;
+    font-size: 16px;
+    cursor: pointer;
+}
+.modalInfo{
+    position: relative;
+    margin-bottom: 5%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    flex-direction: column;
+}
+.modalInfo p{
+    margin-top: 1%;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: left;
+    float: left;
+}
+.modalInfo h4{
+    font-weight: 800;
+}
+.modalInfo2{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
+.modalInfo2 p{
+    font-size: 12px;
+    font-weight: 500;
+    font-style: italic;
+
+}
+.modalInfo2 h4{
+    font-weight: 800;
+}
+.modalInfo3{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    text-align: left;
+    margin-top: 5%;
+}
+.modalInfo3 h4{
+    font-weight: 800;
+}
+.ulModal{
+    width: 100%;
+    margin-top: 3%;
+}
+.liModalCont{
+    position: relative;
+    font-size: 12px;
+    margin-bottom: 2%;
+    font-weight: 500;
+}
+.liModalCont img{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: -5%;
+}
+.contratarBtn2{
+    margin-top: 5%;
+    background-color: #743C99;
+    border: none;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.contratarBtn2 a{
+    color: #fff;
+}
+.cursosContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.containerModal2{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0; left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+.containerModal3{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0; left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+.cursosContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.contratarBtn1{
+    background-color: #743C99;
+    border: none;
+    padding: 15px;
+    border-radius: 15px;
+    color: #fff;
+    margin-top: 5%;
+}
+.contratarBtn1 a{
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
+}
+.contratarBtn2 a{
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
+}
+.ModalSec1{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.ModalSec2{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+}
+.imgCurso1{
+    width: 300px;
+}
+.imgCurso2{
+    width: 300px;
+}
+.imgCurso3{
+    width: 300px;
+}
+
+
+@media (max-width: 768px){
+body{
+    background: #efefef;
+}
+.carousel{
+    margin-top: 10%;
+}
+#btn-modal{
+    display: none;
+}
+.containerModal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0; left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+.contentModal{
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 95vh;
+    background: linear-gradient(0deg, #D895F2 0%, #82A4D7 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.contentModal h2{
+    margin-bottom: 15px;
+}
+.contentModal img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+}
+.btnCerrar{
+    position: absolute;
+    top: 2%;
+    left: 93%;
+}
+.popupImg{
+    margin-top: -15%;
+}
+.btnCerrar button{
+    background: none;
+    border: none;
+    color: #fff;
+    font-weight: 900;
+    font-size: 16px;
+}
+.modalInfo{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin:auto
+}
+.modalInfo p{
+    margin-top: 3%;
+    font-size: 12px;
+    font-weight: 500;
+}
+.modalInfo h4{
+    font-weight: 800;
+}
+.modalInfo2{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+.modalInfo2 p{
+    margin-top: 3%;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: italic;
+}
+.modalInfo2 h4{
+    margin-top: 5%;
+    font-weight: 800;
+}
+.modalInfo3{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
+.modalInfo3 h4{
+    margin-top: 3%;
+    font-weight: 800;
+}
+.ulModal{
+    margin-top: 3%;
+}
+.liModalCont{
+    font-size: 12px;
+    margin-bottom: 2%;
+    font-weight: 500;
+}
+.liModalCont img{
+    display: none;
+}
+.contratarBtn1{
+    display: none;
+}
+.contratarBtn2{
+    background-color: #743C99;
+    border: none;
+    padding: 15px;
+    border-radius: 15px;
+}
+.contratarBtn2 a{
+    color: #fff;
+}
+
+}

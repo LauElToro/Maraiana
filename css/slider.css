@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 16px;
+}
+.container{
+    position: relative;
+    max-width: 1170px;
+    margin: auto;
+    padding: 0 15px;
+    background-color: #fff;
+}
+.contMandala{
+    position: absolute;
+    left: -32%;
+    top: 0;
+}
+/*¨section-header*/
+.section-header{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.section-header .title{
+    font-size: 30px;
+    font-weight: 600;
+    margin-left: -80%;
+    font-style: italic;
+}
+/*testimonials*/
+.testimonials{
+    padding: 100px 0;
+    background-color: #fff;
+}
+.testimonials-item{
+    background: linear-gradient(0deg, #8B55FF80 0%, #5FD8E780 100%);
+    padding: 30px;
+    min-height: 350px;
+    position: relative;
+    border-radius: 40px;
+}
+.comillasImg{
+    position: absolute;
+    border-radius: 0;
+    left: 85%;
+}
+.testimonials-item .info{
+    display: flex;
+    align-items: center;
+    padding-top: 5%;
+}
+.testimonials-item img{
+    max-width: 80px;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+.testimonials-item .name{
+    font-size: 18px;
+    margin-top: 5%;
+    color: #fff;
+}
+.testimonials-item p{
+    margin-top: 20px;
+}
+.testimonials .swiper-pagination{
+    position: relative;
+    margin-top: 40px;
+    bottom: auto;
+}
+.testimonials .swiper-pagination-bullet{
+    height: 12px;
+    width: 12px;
+}
+.text-box{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+}
+@media (max-width: 1199px) {
+    .section-header .title{
+        margin-left: 0%;
+    }
+}
+@media (max-width: 991px){
+  
+.section-header .title{ 
+    margin-left: 0%; 
+    }
+}
+@media (max-width: 768px){
+    .testimonials-item{
+        min-height: 400px;
+    }
+    .info{
+        padding-top: 5%;
+    }
+    .section-header .title{
+        margin-left: 0%;
+    }
+
+}
