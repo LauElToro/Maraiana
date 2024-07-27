@@ -104,7 +104,7 @@ if ($course_id && $part_number) {
             <form class="form1" method="GET" action="">
                 <label for="course_id">Curso:</label>
                 <select id="course_id" name="course_id" onchange="this.form.submit()" required>
-                <option value="">Seleccione un curso</option>
+                <option class="formOption" value="">Seleccione un curso</option>
                 <?php foreach ($courses as $course): ?>
                 <option value="<?= htmlspecialchars($course['id']) ?>" <?= $course['id'] == $course_id ? 'selected' : '' ?>><?= htmlspecialchars($course['course_name']) ?></option>
                 <?php endforeach; ?>
@@ -114,7 +114,7 @@ if ($course_id && $part_number) {
         <h3>Partes del Curso: <?= htmlspecialchars($course_name) ?></h3>
             <ul>
             <?php foreach ($parts as $part): ?>
-                <li>
+                <li class="cursoItem">
                     <a href="?course_id=<?= htmlspecialchars($course_id) ?>&part_number=<?= htmlspecialchars($part['part_number']) ?>">
                         Parte <?= htmlspecialchars($part['part_number']) ?>: <?= htmlspecialchars($part['title']) ?>
                     </a>
@@ -125,22 +125,23 @@ if ($course_id && $part_number) {
     </div>
     <div class="verCursoSubCont2">   
     <?php if ($part_details): ?>
-        <h2>Detalles de la Parte del Curso</h2>
-        <h3>Curso: <?= htmlspecialchars($course_name) ?></h3>
-        <p>Título: <?= htmlspecialchars($part_details['title']) ?></p>
-        <p>Subtítulo: <?= htmlspecialchars($part_details['subtitle']) ?></p>
-        <p>Descripción: <?= htmlspecialchars($part_details['description']) ?></p>
-        <?php if ($part_details['video_path']): ?>
-            <h4>Video:</h4>
-            <video width="320" height="240" controls>
+            <video class="courseVid" controls>
                 <source src="../<?= htmlspecialchars($part_details['video_path']) ?>" type="video/mp4">
                 Tu navegador no soporta el elemento de video.
             </video>
+            <div class="subContVid">
+        <h3>Curso: <?= htmlspecialchars($course_name) ?></h3>
+        <p><label class="descripcionItem">Título:</label> <?= htmlspecialchars($part_details['title']) ?></p>
+        <p><label class="descripcionItem">Subtítulo: </label><?= htmlspecialchars($part_details['subtitle']) ?></p>
+        <p><label class="descripcionItem">Descripción:</label> <?= htmlspecialchars($part_details['description']) ?></p>
+        <?php if ($part_details['video_path']): ?>
         <?php endif; ?>
         <?php if ($part_details['material_path']): ?>
             <p>Material (PDF): <a href="../<?= htmlspecialchars($part_details['material_path']) ?>">Descargar Material</a></p>
         <?php endif; ?>
     <?php endif; ?>
+
+            </div>
     </div>
 </div>
 </body>

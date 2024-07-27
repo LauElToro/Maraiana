@@ -43,7 +43,7 @@ nav p{
 }
 .dashboardLinks{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     width: 20%;
     height: auto;
@@ -51,16 +51,18 @@ nav p{
     padding-top: 5%;
 }
 .dashboardLinks li{
+    width: 180px;
+    text-align: center;
     margin-bottom: 15%;
     list-style: none;
     background-color: #6EA6FF;
-    padding: 15px 15px;
+    padding: 10px 10px;
     border-radius: 20px;
 }
 .dashboardLinks a{
     color: #000;
     font-weight: 700;
-    font-size: 25px;
+    font-size: 18px;
     text-decoration: none;
 }
 .dashboardLinks a:hover{
@@ -73,11 +75,12 @@ nav p{
 }
 @media screen and (max-width:1199px) {
     .dashboardLinks li{
-        padding: 10px 10px;
+        width: 120px;
+        padding: 15px 10px;
         border-radius: 20px;
     }
     .dashboardLinks a{
-        font-size: 20px;
+        font-size: 18px;
     }
 }
 @media screen and (max-width: 991px) { 

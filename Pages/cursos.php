@@ -183,9 +183,10 @@ if (isset($_GET['course_id'])) {
             <div class="contModal">
                 <div class="divModalImg">
                     <img id="modalImg" src="" alt="">
+                    <a id="btnVerMas" href="#" class="btn btn-info">Ver más</a>
                 </div>
                 <div class="modalContent">
-                    <h2>Lo que aprenderás:</h2>
+                    <h2>En este curso aprenderas:</h2>
                     <p id="learn">No disponible</p>
 
                     <h2>Orientado para:</h2>
@@ -195,7 +196,6 @@ if (isset($_GET['course_id'])) {
                     <ul id="syllabus"></ul>
                 </div>
             </div>
-            <a id="btnVerMas" href="#" class="btn btn-info">Ver más</a>
         </div>
     </div>
 <script>
@@ -207,4 +207,31 @@ if (isset($_GET['course_id'])) {
         </div>
 
 </body>
+    <footer>
+        <div class="footerCont">
+            <div class="footerImg">
+            <img src="../img/Logo Footer.png" alt="">
+            </div>
+            <div class="footerLinks">
+                <h3>Links Importantes</h3>
+             <!--   <a href="./Pages/cursos.php">Cursos</a> -->
+                <a href="./comunidad.php">Comunidad</a>
+                <a href="./clasesGrupales.php">Clases grupales</a>
+                <a href="./coachingIndividual.php">Coaching individual</a>
+                <!-- a href="./Pages/escritorioDelAlumno.php">Escritorio de alumno</a 
+                <a href="">Términos y condiciones</a> -->
+            </div>
+            <div class="footerRedes">
+                <h3>Seguime</h3>
+                <a href="https://www.tiktok.com/@mariana.profedecanto" target="_blank">TikTok</a>
+                <a href="https://www.instagram.com/mariana.profedecanto/" target="_blank">Instagram</a>
+                <a  href="https://www.youtube.com/channel/UCxXlYyH8jRpGXeqQTe0PfhQ" target= "_blank">Youtube</a>
+                <a  href="https://www.linkedin.com/in/mariana-mastropietro-artista?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target= "_blank">Linkedin</a>
+            </div>
+            <div class="footerContacto">
+                <h3>Contacto</h3>
+                <a href="https://api.whatsapp.com/send/?phone=5491140431611&text=Hola+me+interesan+las+clases+de+canto+%3A+Liber%C3%A1+tu+voz&type=phone_number&app_absent=0" target="_blank">Whatsapp</a>
+            </div>
+        </div>
+    </footer> 
 </html>

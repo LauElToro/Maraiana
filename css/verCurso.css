@@ -5,6 +5,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    overflow: hidden;
 }
 .verCursoSubCont1{
     display: flex;
@@ -12,6 +13,7 @@
     justify-content: center;
     flex-direction: column;
     width: 20%;
+    border-radius: 20px;
     background-color: #D9D9D9;
 }
 .verCursoSubCont1 h2{
@@ -27,16 +29,19 @@
     font-size: 20px;
 }
 .form1{
+    width: 80%;
     margin-top: 5%;
     display: flex;
+    text-align: center;
     flex-direction: column;
 }
 .form1 label{
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 22px;
 }
 .form1 select{
     color: #fff;
-    background-color: #743C99;
+    background-color: #34114B;
     padding: 5px;
     font-size: 22px;
     border-radius: 10px;
@@ -57,19 +62,53 @@
     padding: 15px 0px;
 }
 .verCursoSubCont2{
-    width: 80%;
+    width: 79%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    margin-left: 1%;
 }
 .verCursoSubCont2 p{
     margin-top: 5px;
     font-size: 22px;    
 }
+.verCursoSubCont2 h3{
+    font-size: 30px;
+}
 .verCursoSubCont2 h4{
     margin-top: 5px;
     font-size: 25px;
+}
+.subContVid{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+.descripcionItem{
+    font-size: 700;
+}
+.cursoItem{
+    background-color: #34114B;
+    padding: 10px 30px;
+    border-radius: 20px;
+    margin-top: 2%;
+}
+.cursoItem:hover{
+    background-color: #743C99;
+}
+.descripcionItem{
+    font-weight: 700;
+}
+.cursoItem a{
+    color: #fff;
 }
 #part_number{
     font-size: 20px;
@@ -98,4 +137,41 @@
 }
 .cursoP{
     font-weight: 700;
+}
+.courseVid{
+    margin-top: 5%;
+    width: 720px;
+    height: 480px;
+}
+
+@media screen and (max-width:991px) {
+    .verCursoSection{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .verCursoSubCont1{
+        width: 100%;
+        padding-bottom: 2%;
+    }
+    .verCursoSubCont2{
+        margin-top: 1%;
+        width: 100%;
+    }
+    .courseVid{
+        margin-top: 5%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .courseVid{
+        width: 480px;
+        height: 320px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .courseVid{
+        width: 350px;
+        height: 220px;
+    }
 }

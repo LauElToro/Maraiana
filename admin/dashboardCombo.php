@@ -120,7 +120,7 @@ $courses = $conn->query("SELECT * FROM courses")->fetchAll();
             <li><a href="./dashboardComunidad.php">Comunidad</a></li>
             <li><a href="./dashboardCoaching.php">Coaching</a></li>
             <li><a href="./dashboardClasesGrupales.php">Clases grupales</a></li>
-            <li><a href="./dashboardInformacion.php">INFORMACION</a></li>
+            <li><a href="./dashboardInformacion.php">INFO</a></li>
         </ul>
     </div>
     <div class="dashboardCursos">

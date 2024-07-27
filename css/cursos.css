@@ -162,6 +162,12 @@ section{
     padding: 0px 10px 0px 10px;
     border-radius: 20px;
 }
+.contModal{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
 .subContModal{
     position: relative;
     background: linear-gradient(0deg, #D895F2 0%, #82A4D7 100%);
@@ -186,9 +192,12 @@ section{
     width: 50%;
 }
 .modalContent{
+    width: 100%;
     color: #000;
 }
 .modalContent h2{
+    font-size: 22px;
+    font-weight: 700;
     margin-left: 5px;
 }
 .modalContent p{
@@ -400,6 +409,7 @@ footer{
 .footerContacto{
     margin-top: 10%;
 }
+}
 
 @media(max-width: 767px){
     .comboCursosBg{
@@ -412,7 +422,14 @@ footer{
         display: flex;
         width: 450px;
     }
+    .contModal{
+        flex-direction: column;
+    }
+    .modalContent{
+        margin-top: 2%;
+    }
 }
+
 @media (max-width: 480px){
     .comboCursosBg img{
         width: 350px;
@@ -426,4 +443,4 @@ footer{
         height: 300px;
     }
 }
-}
+

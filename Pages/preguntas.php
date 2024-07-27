@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/navbar.css">
     <link rel="stylesheet" type="text/css" href="../css/preguntas.css">
+    <link rel="stylesheet" type="text/css" href="../css/escritorioDeAlumnos.css">
     <script src="https://kit.fontawesome.com/d5da104675.js" crossorigin="anonymous"></script>
     <link href="../img/Ellipse 4.png" rel="icon">
     <title>Preguntas</title>
@@ -59,6 +60,27 @@
     ?>
         </nav>
     </header>
+		<div class="btn-menu">
+			<label for="btn-menu">☰</label>
+		</div>
+    <section>   
+        <input type="checkbox" id="btn-menu">
+<div class="container-menu">
+	<div class="cont-menu">
+    <p>Panel de control</p>
+    <img src="../img/Linea.png" alt="">
+    <ul class="ul1">
+            <li><a href="./escritorioDelAlumno.php">Escritorio</a></li>
+            <li><a href="./profile.php">Perfil</a></li>
+            <li><a href="./cursosEscritorio.php">Cursos</a></li>
+            <li><a href="./preguntas.php">Preguntas</a></li>
+            <li><a href="./comunidad.php">Comunidad</a></li>
+            <li><a href="./clasesGrupales.php">Clases grupales</a></li>
+            <li><a href="./coachingIndividual.php">Coaching</a></li>
+        </ul>
+		<label for="btn-menu">✖️</label>
+	</div>
+</div>   
     <section>
     <div class="bgPreguntas">
         <div class="escritorioButtons">
@@ -107,31 +129,5 @@
         </div>
     </div>
     </section>
-    <footer>
-        <div class="footerCont">
-            <div class="footerImg">
-            <img src="../img/Logo Footer.png" alt="">
-            </div>
-            <div class="footerLinks">
-                <h3>Links Importantes</h3>
-                <!--   <a href="./Pages/cursos.php">Cursos</a> -->
-                <a href="../Pages/comunidad.php">Comunidad</a>
-                <a href="../Pages/clasesGrupales.php">Clases grupales</a>
-                <a href="../Pages/coachingIndividual.php">Coaching individual</a>
-                <a href="../Pages/escritorioDelAlumno.php">Escritorio de alumno</a>
-                <a href="">Términos y condiciones</a>
-            </div>
-            <div class="footerRedes">
-                <h3>Seguime</h3>
-                <a href="">TikTok</a>
-                <a href="">Instagram</a>
-                <a href="">Youtube</a>
-            </div>
-            <div class="footerContacto">
-                <h3>Contacto</h3>
-                <a href="">Whatsapp</a>
-            </div>
-        </div>
-    </footer> 
 </body>
 </html>

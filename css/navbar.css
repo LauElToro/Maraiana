@@ -11,6 +11,7 @@ nav{
     height: 120px;
     background: linear-gradient(0deg, #743C99 0%, #092C64 100%); 
     border-radius: 0px 0px 20px 20px;
+    z-index: 900;
     
 }
 .redesNavbar{
@@ -64,6 +65,7 @@ nav{
 nav ul{
     margin-right: 20px;
     text-align: center;
+    z-index: 900;
 }
 nav ul li {
     display: inline-block;
@@ -200,9 +202,9 @@ nav ul li a{
         height: 50px;
     } 
     nav{
-        z-index: 1500;
         position: relative;
         height: 90px;
+        z-index: 900;
     }  
     nav ul{
         position: fixed;
@@ -212,7 +214,7 @@ nav ul li a{
         top: -430px;
         text-align: center;
         transition: all .5s;
-        z-index: 1500;
+        z-index: 900;
     }
     nav ul li{
         display: flex;
@@ -323,19 +325,19 @@ nav ul li a{
         height: 50px;
     } 
     nav{
-        z-index: 1500;
+        z-index: 900;
         position: relative;
         height: 90px;
     }  
     nav ul{
         position: fixed;
         width: 100%;
-        height: 330px;
+        height: 430px;
         background: linear-gradient(0deg, #0E2D66 0%, #4C1271 100%);
-        top: -330px;
+        top: -430px;
         text-align: center;
         transition: all .5s;
-        z-index: 1500;
+        z-index: 900;
     }
     nav ul li{
         display: flex;
@@ -447,19 +449,19 @@ nav ul li a{
 
      
     nav{
-        z-index: 1500;
+        z-index: 900;
         position: relative;
         height: 90px;
     }  
     nav ul{
         position: fixed;
         width: 100%;
-        height: 350px;
+        height: 450px;
         background: linear-gradient(0deg, #0E2D66 0%, #4C1271 100%);
-        top: -350px;
+        top: -450px;
         text-align: center;
         transition: all .5s;
-        z-index: 1500;
+        z-index: 900;
     }
     nav ul li{
         margin-top: 15px;
