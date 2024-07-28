@@ -5,7 +5,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    gap: 5%;
+    flex-direction: row;
 }
 .course-details{
     display: flex;
@@ -13,7 +14,16 @@
     justify-content: center;
     flex-direction: column;
 }
+.course-details h2{
+    margin-bottom: 5%;
+    font-size: 40px;
+}
 .course-details p{
+    background-color: #F4E9FF;
+    margin-bottom: 5%;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 25px;
     font-weight: 600;
 }
 .payment-options{
@@ -23,24 +33,44 @@
     flex-direction: column;
 }
 .payment-options .mp{
+    margin-top: 5%;
     background-color: #239CDC;
     color: #fff;
-    padding: 5px 20px;
+    padding: 10px 20px;
     border: none;
     border-radius: 20px;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
+    cursor: pointer;
 }
 .payment-options .pp{
+    margin-top: 5%;
     background-color: #233FDC;
     color: #fff;
-    padding: 5px 20px;
+    padding: 10px 20px;
     border: none;
     border-radius: 20px;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
-
+    cursor: pointer;
 }
+.mp:hover{
+    background-color: #0376B3;
+}
+.pp:hover{
+    background-color: #4F64DD;
+}
+.cursoImg{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 350px;
+    height: 350px;
+}
+.cursoCont1{
+    display: flex;
+    flex-direction: column;
+}
+
 /*FOOTER */
 
 footer{
@@ -86,6 +116,11 @@ footer{
 }
 
 @media (max-width: 768px) {
+
+    .compra-container{
+        flex-direction: column;
+    }
+
 
 footer{
     width: 100%;

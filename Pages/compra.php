@@ -94,21 +94,21 @@ $image_path = BASE_URL . ltrim(htmlspecialchars($imagenCurso), '/');
     </header>
     <section> 
         <div class="compra-container">
+            <div class="cursoCont1">
             <div class="course-details">
                 <h2><?php echo htmlspecialchars($nombreCurso); ?></h2>
-                <img src="<?php echo $image_path; ?>" alt="Imagen del curso">
                 <p>Precio en ARS: $<?php echo htmlspecialchars($precioARS); ?></p>
                 <p>Precio en USD: $<?php echo htmlspecialchars($precioUSD); ?></p>
             </div>
             <div class="payment-options">
-                <form action="compraConArs.php" method="POST">
+                <form class="form1" action="compraConArs.php" method="POST">
                     <input type="hidden" name="course_id" value="<?php echo htmlspecialchars($curso_id); ?>">
                     <input type="hidden" name="course_name" value="<?php echo htmlspecialchars($nombreCurso); ?>">
                     <input type="hidden" name="image_path" value="<?php echo htmlspecialchars($imagenCurso); ?>">
                     <input type="hidden" name="precio" value="<?php echo htmlspecialchars($precioARS); ?>">
                     <button type="submit" class="btn btn-primary mp">Pagar con MercadoPago</button>
                 </form>
-                <form action="compraConUsd.php" method="POST">
+                <form class="form2" action="compraConUsd.php" method="POST">
                     <input type="hidden" name="course_id" value="<?php echo htmlspecialchars($curso_id); ?>">
                     <input type="hidden" name="course_name" value="<?php echo htmlspecialchars($nombreCurso); ?>">
                     <input type="hidden" name="image_path" value="<?php echo htmlspecialchars($imagenCurso); ?>">
@@ -116,6 +116,8 @@ $image_path = BASE_URL . ltrim(htmlspecialchars($imagenCurso), '/');
                     <button type="submit" class="btn btn-secondary pp">Pagar con PayPal</button>
                 </form>
             </div>
+        </div>
+                <img class="cursoImg" src="<?php echo $image_path; ?>" alt="Imagen del curso">
         </div>
     </section> 
 </body>

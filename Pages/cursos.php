@@ -198,9 +198,6 @@ if (isset($_GET['course_id'])) {
             </div>
         </div>
     </div>
-<script>
-    
-</script>
     <div class="comboCursosBg">
             <img src="../img/Combo3cursos.png" alt="">
             <button class="contratarBtn2"><a href="#">Ver este combo</a></button>
