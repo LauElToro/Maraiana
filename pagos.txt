@@ -1,0 +1,31 @@
+[09:38, 26/7/2024] Lau: PAYPAL
+
+nombre usuario api :
+
+mariana.mastropietro.eventos_api1.gmail.com
+
+contraseña api:
+
+AHMMWVDUXZL8BFG2
+
+Firma:
+
+AivkqA-4YffFBBGV3wGe3au-MPQxABr91Vusm2sIZ7iH2sOcWeW7mBbI
+[09:38, 26/7/2024] Lau: MERCADO PAGO
+
+Public key:
+
+APP_USR-24d8c9b3-7ba0-4e86-9269-495de63b7629
+
+Access Token:
+
+APP_USR-7090587000298386-070313-b07df82ee208ff0b32418ffaa9912fb8-45636863
+
+
+Client ID:
+
+7090587000298386
+
+Client Secret:
+
+jtvFGZC0ENK7JaYzG3qeQyhA1gIoHpCG

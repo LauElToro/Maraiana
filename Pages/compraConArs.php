@@ -33,15 +33,21 @@ $items = [
         "id" => $course_id,
         "title" => $course_name,
         "quantity" => 1,
-        "unit_price" => $precio
+        "unit_price" => /* $precio */1/* cambiar despes de las pruebas */
     ]
 ];
 
 try {
+    // Crea una preferencia de pago con los detalles del producto y otras configuraciones
     $preference = $client->create([
         "items" => $items,
         "statement_descriptor" => "mariano",
         "external_reference" => "CDP001",
+        "back_urls" => [
+            "success" => "http://localhost/cursos/Cursos/Backend/mercadopago_success.php?course_id=$course_id",
+/*             "failure" => "http://localhost/cursos/Cursos/Backend/mercadopago_failure.php",
+            "pending" => "http://localhost/cursos/Cursos/Backend/mercadopago_pending.php" */
+        ],
     ]);
 
     if ($preference instanceof MercadoPago\Resources\Preference) {
@@ -97,82 +103,77 @@ $image_path = BASE_URL . ltrim(htmlspecialchars($imagenCurso), '/');
     <header>
         <nav>
             <div class="redesNavbar">
-                <a href="###"><img  class="youtubeLink"  src="../img/Youtube.png" alt=""></a>
-                <a href="###"><img  class="instagramLink"  src="../img/Instagram.png" alt=""></a>
-                <a href="###"><img  class="wasapLink"  src="../img/Wasap.png" alt=""></a>
-                <a href="###"><img  class="tiktokLink"  src="../img/Tiktok.png" alt=""></a>
-                </div>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <img src="../img/Bars.png" alt="">
-        </label>
-        <a href="../index.php" class="enlace">
-            <img src="../img/Logo2.png" alt="" class="Logo2">
-            <img src="../img/Logo.png" alt="" class="Logo">
-        </a>
-    <?php
-    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-        // Si el usuario está autenticado, mostrar enlace al perfil y al cierre de sesión
-        echo '<ul>
-        <!--     <li><a href="../Pages/cursos.php">Cursos</a></li> -->
-        <li><a href="../Pages/comunidad.php">Comunidad</a></li>
-        <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
-        <li><a href="../Pages/coachingIndividual.php">Coaching individual<a><li>
-        <li><a href="../Pages/escritorioDelAlumno.php">Escritorio de alumno<a><li>
-
-              </ul>';
-    } else {
-        // Si el usuario no está autenticado, mostrar enlaces de inicio de sesión y registro
-        echo '<ul>            
-        <li><a href="../index.php">Inicio</a></li>         
-        <!--      <li><a href="../Pages/cursos.php">Cursos</a></li> -->
-        <li><a href="../Pages/comunidad.php">Comunidad</a></li>
-        <li class="dropdown">
-            <a href="#" class="dropbtn">Servicios</a>
-            <ul class="dropdown-content">
-            <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
-            <li><a href="../Pages/coachingIndividual.php">Coaching individual</a></li>
-            </ul>
-        </li>
-        <!--   <li style="float: right;"><button class="btn btn-outline-primary navBtn" id="loginButton">INGRESAR</button></li>
-        <li><button class="btn btn-outline-primary navBtn2" id="loginButton">INGRESAR</button></li> -->
-      </ul>';
-    }
-    ?> 
+                <a href="###"><img class="youtubeLink" src="../img/Youtube.png" alt=""></a>
+                <a href="###"><img class="instagramLink" src="../img/Instagram.png" alt=""></a>
+                <a href="###"><img class="wasapLink" src="../img/Wasap.png" alt=""></a>
+                <a href="###"><img class="tiktokLink" src="../img/Tiktok.png" alt=""></a>
+            </div>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <img src="../img/Bars.png" alt="">
+            </label>
+            <a href="../index.php" class="enlace">
+                <img src="../img/Logo2.png" alt="" class="Logo2">
+                <img src="../img/Logo.png" alt="" class="Logo">
+            </a>
+            <?php
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                // Si el usuario está autenticado, mostrar enlace al perfil y al cierre de sesión
+                echo '<ul>
+                <li><a href="../Pages/comunidad.php">Comunidad</a></li>
+                <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
+                <li><a href="../Pages/coachingIndividual.php">Coaching individual<a><li>
+                <li><a href="../Pages/escritorioDelAlumno.php">Escritorio de alumno<a><li>
+                </ul>';
+            } else {
+                // Si el usuario no está autenticado, mostrar enlaces de inicio de sesión y registro
+                echo '<ul>            
+                <li><a href="../index.php">Inicio</a></li>         
+                <li><a href="../Pages/comunidad.php">Comunidad</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Servicios</a>
+                    <ul class="dropdown-content">
+                        <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
+                        <li><a href="../Pages/coachingIndividual.php">Coaching individual</a></li>
+                    </ul>
+                </li>
+                </ul>';
+            }
+            ?> 
         </nav>
     </header>
     <section>
         <div class="bgCont1">
-                <?php
-                $valorDeCurso = $precio;
-                ?> 
+            <?php
+            $valorDeCurso = $precio;
+            ?> 
             <div class="subCont1">
                 <form>
                 <h4>CLIENTE</h4>
                 <div class="inputCont">
-                    <input type="text" placeholder="PAIS" requiered>
+                    <input type="text" placeholder="PAIS" required>
                 </div>
                 <div class="inputSubCont1">
                     <div class="inputCont2">
-                        <input type="text" placeholder="NOMBRE" requiered>
+                        <input type="text" placeholder="NOMBRE" required>
                     </div>
                     <div class="inputCont2">
-                        <input type="text" placeholder="APELLIDO" requiered>
+                        <input type="text" placeholder="APELLIDO" required>
                     </div>
                 </div>
                 <div class="inputCont">
-                    <input type="number" placeholder="TELEFONO" requiered>
+                    <input type="number" placeholder="TELEFONO" required>
                 </div>
                 <div class="inputSubCont2">
                     <div class="inputCont2">
-                        <input type="text" placeholder="TIPO DE DNI" requiered>
+                        <input type="text" placeholder="TIPO DE DNI" required>
                     </div>
                     <div class="inputCont2">
-                        <input type="number" placeholder="DNI" requiered>
+                        <input type="number" placeholder="DNI" required>
                     </div>
                 </div>
                 </form>
-                    <img src="../img/Mercado pago.png" alt="">
+                <img src="../img/Mercado pago.png" alt="">
             </div>
 
             <div class="subCont2">
@@ -183,7 +184,7 @@ $image_path = BASE_URL . ltrim(htmlspecialchars($imagenCurso), '/');
                 <div class="bgSubCont2">
                     <h4>TOTAL</h4>
                     <img src="../img/Linea.png" alt="">
-                    <p class="valorArs"><?php  echo $valorDeCurso; ?></p>
+                    <p class="valorArs"><?php echo $valorDeCurso; ?></p>
                     <button>PAGAR</button>
                 </div>
                 <div class="arsImg">
@@ -191,20 +192,21 @@ $image_path = BASE_URL . ltrim(htmlspecialchars($imagenCurso), '/');
                 </div>
                 <div class="bgSubCont2Web">
                     <h4>TOTAL</h4>
-                    <p class="valorArs"><?php  echo $valorDeCurso; ?></p>
-                    </div><div id="wallet_container">
-                     <button class="arsBtn" onclick="handlePayment(this)">PAGAR</button>
-                    </div>
+                    <p class="valorArs"><?php echo $valorDeCurso; ?></p>
+                </div>
+                <div id="wallet_container">
+                    <button class="arsBtn" onclick="handlePayment(this)">PAGAR</button>
+                </div>
+            </div>
         </div>
     </section>
     <footer>
         <div class="footerCont">
             <div class="footerImg">
-            <img src="../img/Logo Footer.png" alt="">
+                <img src="../img/Logo Footer.png" alt="">
             </div>
             <div class="footerLinks">
                 <h3>Links Importantes</h3>
-                <!--   <a href="./Pages/cursos.php">Cursos</a> -->
                 <a href="../Pages/comunidad.php">Comunidad</a>
                 <a href="../Pages/clasesGrupales.php">Clases grupales</a>
                 <a href="../Pages/coachingIndividual.php">Coaching individual</a>
