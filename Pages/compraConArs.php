@@ -2,51 +2,65 @@
 session_start();
 require_once '../vendor/autoload.php';
 
-// Verifica que MercadoPagoConfig se haya cargado correctamente
+// Definir la URL base de tu aplicación
+define('BASE_URL', 'http://localhost/Cursos/'); // Asegúrate de ajustar esto según la URL base real de tu sitio
 
-// Importa las clases necesarias del SDK de MercadoPago
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['course_id'], $_POST['course_name'], $_POST['image_path'], $_POST['precio'])) {
+        $course_id = htmlspecialchars($_POST['course_id']);
+        $course_name = htmlspecialchars($_POST['course_name']);
+        $imagenCurso = htmlspecialchars($_POST['image_path']);
+        $precio = floatval($_POST['precio']);
+    } else {
+        echo "Faltan parámetros en la solicitud.";
+        exit;
+    }
+} else {
+    echo "Método de solicitud no permitido.";
+    exit;
+}
+
 use MercadoPago\Client\Preference\PreferenceClient;
 use MercadoPago\MercadoPagoConfig;
 
-// Agrega credenciales ACCESS_TOKEN
-MercadoPagoConfig::setAccessToken("APP_USR-214004285591922-070212-07575a2c44625256a88a0f5965cfbbd2-71530083"); // Reemplaza con tu ACCESS_TOKEN válido
+// Reemplaza con tu ACCESS_TOKEN válido
+MercadoPagoConfig::setAccessToken("APP_USR-214004285591922-070212-07575a2c44625256a88a0f5965cfbbd2-71530083");
 
-// Crea una instancia del cliente de preferencias de MercadoPago
 $client = new PreferenceClient();
 
-// Ejemplo de datos de producto
 $items = [
     [
-        "id" => "DEP-0001",
-        "title" => "Curso",
+        "id" => $course_id,
+        "title" => $course_name,
         "quantity" => 1,
-        "unit_price" => 50000
+        "unit_price" => $precio
     ]
 ];
 
-// Crea una preferencia de pago con los detalles del producto y otras configuraciones
 try {
     $preference = $client->create([
         "items" => $items,
-        "statement_descriptor" => "MI TIENDA",
+        "statement_descriptor" => "mariano",
         "external_reference" => "CDP001",
     ]);
 
-    // Verifica si la preferencia se creó correctamente
     if ($preference instanceof MercadoPago\Resources\Preference) {
         $preference_id = $preference->id;
     } else {
-        // Manejo de error si la preferencia no se creó correctamente
         echo "Error al crear la preferencia";
+        exit;
     }
 } catch (Exception $e) {
-    // Captura cualquier excepción lanzada durante la creación de la preferencia
     echo "Excepción capturada: " . $e->getMessage();
+    exit;
 }
+
+// Construir la ruta de la imagen
+$image_path = BASE_URL . ltrim(htmlspecialchars($imagenCurso), '/');
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,18 +72,14 @@ try {
     <title>Ventana de compra</title>
     <script src="https://sdk.mercadopago.com/js/v2"></script>
     <script>
-    // Función para manejar el pago cuando se hace clic en el botón "PAGAR"
     function handlePayment(button) {
-        // Oculta el botón al hacer clic
         button.style.display = 'none';
 
-        // Lógica adicional para manejar el pago con MercadoPago
         const mp = new MercadoPago('APP_USR-89a1eb91-010b-4edd-a52d-fc9c99b5cb4f', {
             locale: 'es-AR'
         });
 
-        // Obtén el ID de preferencia desde PHP y asegúrate de que esté disponible
-        const preferenceId = '<?php echo $preference->id; ?>';
+        const preferenceId = '<?php echo $preference_id; ?>';
 
         mp.checkout({
             preference: {
@@ -81,7 +91,7 @@ try {
             }
         });
     }
-</script>
+    </script>
 </head>
 <body>   
     <header>
@@ -134,7 +144,7 @@ try {
     <section>
         <div class="bgCont1">
                 <?php
-                $valorDeCurso = "$50,000";
+                $valorDeCurso = $precio;
                 ?> 
             <div class="subCont1">
                 <form>
@@ -168,7 +178,7 @@ try {
             <div class="subCont2">
                 <div class="bgSubCont1">
                     <h4>PAGO</h4>
-                    <img src="../img/Curso1.png" alt="">
+                    <img src="<?php echo $image_path; ?>" alt="Imagen del curso">
                 </div>
                 <div class="bgSubCont2">
                     <h4>TOTAL</h4>
