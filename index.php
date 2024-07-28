@@ -165,6 +165,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
         });
     });
 </script>
+
+
 <!--SCRIPT PARA CERRAR LOS POPUP-->
 <script>
         // Función para cerrar el popup
@@ -219,8 +221,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                 <h2>Inicia sesión</h2>
                 <img src="./img/Linea.png" alt="">
                 <form method="POST" id="loginForm">
-                    <label for="username">Usuario:</label>
-                    <input class="inputName" type="text" id="loginUsername" name="username" required><br>
+
                     <label for="email">Email:</label>
                     <input class="inputEmail" type="text" id="loginEmail" name="email" required><br>
                     <label for="password">Contraseña:</label>
@@ -253,7 +254,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            var username = document.getElementById('loginUsername').value;
+            
             var email = document.getElementById('loginEmail').value;
             var password = document.getElementById('loginPassword').value;
 
@@ -263,7 +264,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
                 body: new URLSearchParams({
-                    'username': username,
+      
                     'email': email,
                     'password': password
                 })
@@ -318,6 +319,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
             .catch(error => console.error('Error:', error));
         });
     </script>
+    
     <div class="bgCont1">
         <div class="bgImgCont">
         <iframe width="100%" height="515" style="margin-left: -20px;" src="https://www.youtube.com/embed/LF7sjXW5SZM?si=z9NqXq08np4xSOBS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

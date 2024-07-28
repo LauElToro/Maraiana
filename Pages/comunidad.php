@@ -171,9 +171,9 @@ require_once('..\db\config.php');
                     <div class="loginData">
                         <h2>Inicia sesion</h2>
                         <img src="../img/Linea.png" alt="">
-                        <form method="POST" action="../User/login.php">
-                        <label for="username">Usuario:</label>
-                        <input class="inputName" type="text" id="username" name="username" required><br>
+                        <form method="POST" id="loginForm">
+                        <label for="email">Email:</label>
+                        <input class="inputEmail" type="text" id="loginEmail" name="email" required><br>
                         <label for="password">Contraseña:</label>
                         <input class="inputEmail" type="password" id="password" name="password" required><br>
                         <input class="inputSubmit" type="submit" value="Iniciar sesión">
@@ -186,19 +186,88 @@ require_once('..\db\config.php');
                     <div class="registerData">
                         <h2>Registrate</h2>
                         <img src="../img/Linea.png" alt="">
-                    <form method="POST" action="../User/register.php">
-                        <label for="username">Usuario:</label>
-                        <input class="inputName" type="text" id="username" name="username" required><br>
-                        <label for="password">Contraseña:</label>
-                        <input class="inputPassword" type="password" id="password"  name="password" required><br>
-                        <input type="number" value="2" name="role_id" id="role_id" style="display:none">
-                        <input class="inputSubmit" type="submit" value="Registrar">
-                    </form>
+                        <form method="POST" id="registerForm">
+                            <label for="username">Usuario:</label>
+                            <input class="inputName" type="text" id="registerUsername" name="username" required><br>
+                            <label for="email">Email:</label>
+                            <input class="inputEmail" type="text" id="registerEmail" name="email" required><br>
+                            <label for="password">Contraseña:</label>
+                            <input class="inputPassword" type="password" id="registerPassword" name="password" required><br>
+                            <input type="number" value="2" name="role_id" id="role_id" style="display:none">
+                            <input class="inputSubmit" type="submit" value="Registrar">
+                        </form>
                     <p>¿Ya tenes una cuenta? <a href="" id="loginLink">Inicia Sesion</a></p>
             </div>
         </div>
     </div>
-    
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            var email = document.getElementById('loginEmail').value;
+            var password = document.getElementById('loginPassword').value;
+
+            fetch('./User/login.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({
+      
+                    'email': email,
+                    'password': password
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    localStorage.setItem('user_id', data.user_id);
+                    localStorage.setItem('username', data.username);
+                    localStorage.setItem('email', data.email);
+                    localStorage.setItem('role_id', data.role_id);
+                    alert('Login exitoso');
+                     window.location.href = 'escritorioDelAlumno.php';
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var username = document.getElementById('registerUsername').value;
+            var email = document.getElementById('registerEmail').value;
+            var password = document.getElementById('registerPassword').value;
+
+            fetch('./User/register.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({
+                    'username': username,
+                    'email': email,
+                    'password': password,
+                    'role_id': 2 // Asumimos que el rol por defecto es "User"
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    localStorage.setItem('user_id', data.user_id);
+                    localStorage.setItem('username', data.username);
+                    localStorage.setItem('email', data.email);
+                    localStorage.setItem('role_id', data.role_id);
+                    alert('Registro exitoso');
+                    // window.location.href = 'dashboard.html';
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
 
     <div class="bgCont1Web">
         <div class="bgSubCont1Web">

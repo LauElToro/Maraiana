@@ -3,12 +3,12 @@ session_start();
 include '../db/config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
+
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username AND email = :email");
-    $stmt->bindParam(':username', $username);
+    $stmt = $conn->prepare("SELECT * FROM users WHERE email = :email");
+
     $stmt->bindParam(':email', $email);
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);

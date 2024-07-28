@@ -58,7 +58,7 @@ session_start();
         <!--      <li style="float: right;"><button class="btn btn-outline-primary navBtn" id="loginButton">INGRESAR</button></li>
         <li><button class="btn btn-outline-primary navBtn2" id="loginButton">INGRESAR</button></li> -->
       </ul>';
-    }
+    } 
     ?> 
         </nav>
     </header> 

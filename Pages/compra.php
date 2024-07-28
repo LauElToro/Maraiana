@@ -2,6 +2,9 @@
 session_start();
 include '../db/config.php';
 
+// Definir la URL base de tu aplicación
+define('BASE_URL', 'http://localhost/Cursos/'); // Asegúrate de ajustar esto según la URL base real de tu sitio
+
 // Verificar si se han pasado todos los parámetros necesarios
 if (isset($_GET['course_id'], $_GET['learn'], $_GET['for'], $_GET['syllabus'], $_GET['image'])) {
     $curso_id = $_GET['course_id'];
@@ -31,6 +34,9 @@ if (isset($_GET['course_id'], $_GET['learn'], $_GET['for'], $_GET['syllabus'], $
     echo "No se han pasado todos los parámetros necesarios.";
     exit;
 }
+
+// Construir la ruta de la imagen
+$image_path = BASE_URL . ltrim(htmlspecialchars($imagenCurso), '/');
 ?>
 
 <!DOCTYPE html>
@@ -90,7 +96,7 @@ if (isset($_GET['course_id'], $_GET['learn'], $_GET['for'], $_GET['syllabus'], $
         <div class="compra-container">
             <div class="course-details">
                 <h2><?php echo htmlspecialchars($nombreCurso); ?></h2>
-                <img src="<?php echo htmlspecialchars($imagenCurso); ?>" alt="Imagen del curso">
+                <img src="<?php echo $image_path; ?>" alt="Imagen del curso">
                 <p>Precio en ARS: $<?php echo htmlspecialchars($precioARS); ?></p>
                 <p>Precio en USD: $<?php echo htmlspecialchars($precioUSD); ?></p>
             </div>
