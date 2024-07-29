@@ -1,6 +1,10 @@
 <?php
 session_start();
-include '../db/config.php'; // Asegúrate de que este archivo contenga la configuración de tu conexión PDO
+include '../db/config.php'; // Verificar si el usuario está autenticado
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: ../index.php');
+    exit();
+}
 define('BASE_URL', 'http://localhost/Cursos'); // Asegúrate de que esta es la URL correcta para tu proyecto
 
 // Verifica si el usuario está autenticado y tiene un user_id en la sesión

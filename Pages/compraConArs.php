@@ -1,6 +1,11 @@
 <?php
 session_start();
 require_once '../vendor/autoload.php';
+// Verificar si el usuario está autenticado
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: ../index.php');
+    exit();
+}
 
 // Definir la URL base de tu aplicación
 define('BASE_URL', 'http://localhost/Cursos/'); // Asegúrate de ajustar esto según la URL base real de tu sitio
@@ -81,6 +86,8 @@ $image_path = BASE_URL . ltrim(htmlspecialchars($imagenCurso), '/');
     <link href="../img/Ellipse 4.png" rel="icon">
     <title>Ventana de compra</title>
     <script src="https://sdk.mercadopago.com/js/v2"></script>
+    </head>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
     <script>
     function handlePayment(button) {
         button.style.display = 'none';
@@ -102,7 +109,7 @@ $image_path = BASE_URL . ltrim(htmlspecialchars($imagenCurso), '/');
         });
     }
     </script>
-</head>
+
 <body>   
     <header>
         <nav>

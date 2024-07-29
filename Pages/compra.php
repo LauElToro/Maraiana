@@ -1,6 +1,11 @@
 <?php
 session_start();
 include '../db/config.php';
+// Verificar si el usuario está autenticado
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: ../index.php');
+    exit();
+}
 
 // Definir la URL base de tu aplicación
 define('BASE_URL', 'http://localhost/Cursos/'); // Asegúrate de ajustar esto según la URL base real de tu sitio
