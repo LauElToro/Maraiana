@@ -28,7 +28,6 @@ if (isset($_GET['course_id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/navbar.css">
     <link rel="stylesheet" type="text/css" href="../css/cursos.css">
     <link rel="stylesheet" type="text/css" href="../css/popup.css">
@@ -336,43 +335,7 @@ window.onclick = function(event) {
     
     <section>
         
-    <div class="popup-overlay" id="popupOverlay">
-        <div class="popup" id="popup">
-            <button class="closeButton" id="closeButton">X</button>
-            <div class="loginData">
-                <h2>Inicia sesión</h2>
-                <img src="./img/Linea.png" alt="">
-                <form method="POST" id="loginForm">
-
-                    <label for="email">Email:</label>
-                    <input class="inputEmail" type="text" id="loginEmail" name="email" required><br>
-                    <label for="password">Contraseña:</label>
-                    <input class="inputPassword" type="password" id="loginPassword" name="password" required><br>
-                    <input class="inputSubmit" type="submit" value="Iniciar sesión">
-                </form>
-                <p>No tienes una cuenta? <a href="#" id="registerLink">Regístrate</a></p>
-            </div>
-        </div>
-        <div class="popup2" id="popup2">
-            <button class="closeButton" id="closeButton2">X</button>
-            <div class="registerData">
-                <h2>Regístrate</h2>
-                <img src="./img/Linea.png" alt="">
-                <form method="POST" id="registerForm">
-                    <label for="username">Usuario:</label>
-                    <input class="inputName" type="text" id="registerUsername" name="username" required><br>
-                    <label for="email">Email:</label>
-                    <input class="inputEmail" type="text" id="registerEmail" name="email" required><br>
-                    <label for="password">Contraseña:</label>
-                    <input class="inputPassword" type="password" id="registerPassword" name="password" required><br>
-                    <input type="number" value="2" name="role_id" id="role_id" style="display:none">
-                    <input class="inputSubmit" type="submit" value="Registrar">
-                </form>
-                <p>¿Ya tienes una cuenta? <a href="#" id="loginLink">Inicia Sesión</a></p>
-            </div>
-        </div>
-    </div>
-    
+   
         <div class="bgCont1">
             <div class="bgSubCont1">
                 <div class="bgImgCont">
@@ -434,7 +397,7 @@ window.onclick = function(event) {
         </div>
     </div>
     <?php 
-    // Preparar la consulta SQL para obtener los cursos cuya imagen contenga la palabra "combo"
+// Preparar la consulta SQL para obtener los cursos cuya imagen contenga la palabra "combo"
 $course_query = $conn->prepare("SELECT * FROM courses WHERE image_path LIKE :image_keyword");
 
 // Ejecutar la consulta con el parámetro adecuado
@@ -443,21 +406,34 @@ $course_query->execute([':image_keyword' => '%combo%']);
 // Obtener los resultados
 $courses = $course_query->fetchAll(PDO::FETCH_ASSOC);
 
-// Iterar sobre los resultados y procesarlos según sea necesario
-foreach ($courses as $course) {
-    echo "ID: " . $course['id'] . "<br>";
-    echo "Course Name: " . $course['course_name'] . "<br>";
-    echo "Image Path: " . $course['image_path'] . "<br>";
-    echo "Precio Argentina: " . $course['precio_argentina'] . "<br>";
-    echo "Precio Internacional: " . $course['precio_internacional'] . "<br>";
-    echo "<br>";
-}
+// Verificar si se encontraron cursos
+if (!empty($courses)) {
+    // Supongamos que solo quieres mostrar la primera imagen encontrada
+    $course = $courses[0]; // Puedes ajustar esto si necesitas mostrar más de una imagen
 
-    ?>
-    <div class="comboCursosBg">
-            <img src="../img/Combo3cursos.png" alt="">
-            <button class="contratarBtn2"><a href="compraComboCursos.php">Ver este combo</a></button>
-        </div>
+    $imagePath = $course['image_path'];
+    $courseName = $course['course_name'];
+    $courseId = $course['id'];
+    $precioArgentina = $course['precio_argentina'];
+    $precioInternacional = $course['precio_internacional'];
+} else {
+    $imagePath = ''; // Valor por defecto si no se encuentra ninguna imagen
+}
+?>
+
+<div class="comboCursosBg">
+    <?php if ($imagePath): ?>
+        <img src="../<?php echo htmlspecialchars($imagePath); ?>" alt="<?php echo htmlspecialchars($courseName); ?>">
+        <button class="contratarBtn2">
+            <a href="compraComboCursos.php?id=<?php echo htmlspecialchars($courseId); ?>&course_name=<?php echo urlencode($courseName); ?>&image_path=<?php echo urlencode($imagePath); ?>&precio_argentina=<?php echo urlencode($precioArgentina); ?>&precio_internacional=<?php echo urlencode($precioInternacional); ?>">
+                Ver este combo
+            </a>
+        </button>
+    <?php else: ?>
+        <p>No hay imágenes disponibles.</p>
+    <?php endif; ?>
+</div>
+
 
 </body>
     <footer>
