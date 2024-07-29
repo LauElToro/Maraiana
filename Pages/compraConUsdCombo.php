@@ -35,29 +35,33 @@ session_start();
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
         // Si el usuario está autenticado, mostrar enlace al perfil y al cierre de sesión
         echo '<ul>
-        <!--   <li><a href="../Pages/cursos.php">Cursos</a></li> -->
-        <li><a href="../Pages/comunidad.php">Comunidad</a></li>
-        <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
-        <li><a href="../Pages/coachingIndividual.php">Coaching individual<a><li>
-        <li><a href="../Pages/escritorioDelAlumno.php">Escritorio de alumno<a><li>
-
-              </ul>';
+        <li><a href="../index.php">Inicio</a></li>
+        <li><a href="../Pages/cursos.php">Cursos</a></li>
+        <li><a href="../Pages/comunidad.php">Comunidad</a></li><li class="dropdown">
+            <a href="#" class="dropbtn">Servicios</a>
+            <ul class="dropdown-content">
+                <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
+                <li><a href="../Pages/coachingIndividual.php">Coaching individual</a></li>
+            </ul>
+        </li>
+        <li><a href="../Pages/escritorioDelAlumno.php">Escritorio de alumno</a></li>
+        <li><a href="../Pages/logout.php">Cerrar Sesión</a></li>
+    </ul>';
     } else {
         // Si el usuario no está autenticado, mostrar enlaces de inicio de sesión y registro
-        echo '<ul>            
-        <li><a href="../index.php">Inicio</a></li>         
-        <!--    <li><a href="../Pages/cursos.php">Cursos</a></li> -->
+        echo '<ul>
+        <li><a href="../index.php">Inicio</a></li>
         <li><a href="../Pages/comunidad.php">Comunidad</a></li>
         <li class="dropdown">
             <a href="#" class="dropbtn">Servicios</a>
             <ul class="dropdown-content">
-            <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
-            <li><a href="../Pages/coachingIndividual.php">Coaching individual</a></li>
+                <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
+                <li><a href="../Pages/coachingIndividual.php">Coaching individual</a></li>
             </ul>
         </li>
-        <!--     <li style="float: right;"><button class="btn btn-outline-primary navBtn" id="loginButton">INGRESAR</button></li>
-        <li><button class="btn btn-outline-primary navBtn2" id="loginButton">INGRESAR</button></li> -->
-      </ul>';
+        <li style="float: right;"><button class="btn btn-outline-primary navBtn" id="loginButton1">INGRESAR</button></li>
+        <li><button class="btn btn-outline-primary navBtn2" id="loginButton2">INGRESAR</button></li>
+    </ul>';
     }
     ?> 
         </nav>

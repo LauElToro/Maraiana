@@ -100,9 +100,15 @@ require 'auth.php';
 
 if (is_logged_in()) {
     echo '<ul>
-        <li><a href="./Pages/comunidad.php">Comunidad</a></li>
-        <li><a href="./Pages/clasesGrupales.php">Clases grupales</a></li>
-        <li><a href="./Pages/coachingIndividual.php">Coaching individual</a></li>
+        <li><a href="./index.php">Inicio</a></li>
+        <li><a href="./Pages/cursos.php">Cursos</a></li>
+        <li><a href="./Pages/comunidad.php">Comunidad</a></li><li class="dropdown">
+            <a href="#" class="dropbtn">Servicios</a>
+            <ul class="dropdown-content">
+                <li><a href="./Pages/clasesGrupales.php">Clases grupales</a></li>
+                <li><a href="./Pages/coachingIndividual.php">Coaching individual</a></li>
+            </ul>
+        </li>
         <li><a href="./Pages/escritorioDelAlumno.php">Escritorio de alumno</a></li>
         <li><a href="./Pages/logout.php">Cerrar Sesión</a></li>
     </ul>';

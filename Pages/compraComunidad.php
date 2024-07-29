@@ -9,11 +9,33 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
     <link rel="stylesheet" type="text/css" href="../css/compraComunidad.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d5da104675.js" crossorigin="anonymous"></script>
     <link href="../img/Ellipse 4.png" rel="icon">
     <title>Ventana de compra</title>
+
+    <script>
+        function toggleDropdown() {
+  var dropdown = document.getElementById("myDropdown");
+  dropdown.classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+    </script>
 </head>
 <body>   
     <header>
@@ -37,36 +59,199 @@ session_start();
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
         // Si el usuario está autenticado, mostrar enlace al perfil y al cierre de sesión
         echo '<ul>
-        <!--   <li><a href="../Pages/cursos.php">Cursos</a></li> -->
-        <li><a href="../Pages/comunidad.php">Comunidad</a></li>
-        <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
-        <li><a href="../Pages/coachingIndividual.php">Coaching individual<a><li>
-        <li><a href="../Pages/escritorioDelAlumno.php">Escritorio de alumno<a><li>
-
-              </ul>';
+        <li><a href="../index.php">Inicio</a></li>
+        <li><a href="../Pages/cursos.php">Cursos</a></li>
+        <li><a href="../Pages/comunidad.php">Comunidad</a></li><li class="dropdown">
+            <a href="#" class="dropbtn">Servicios</a>
+            <ul class="dropdown-content">
+                <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
+                <li><a href="../Pages/coachingIndividual.php">Coaching individual</a></li>
+            </ul>
+        </li>
+        <li><a href="../Pages/escritorioDelAlumno.php">Escritorio de alumno</a></li>
+        <li><a href="../Pages/logout.php">Cerrar Sesión</a></li>
+    </ul>';
     } else {
         // Si el usuario no está autenticado, mostrar enlaces de inicio de sesión y registro
-        echo '<ul>            
-        <li><a href="../index.php">Inicio</a></li>         
-        <!--      <li><a href="../Pages/cursos.php">Cursos</a></li> -->
+        echo '<ul>
+        <li><a href="../index.php">Inicio</a></li>
         <li><a href="../Pages/comunidad.php">Comunidad</a></li>
         <li class="dropdown">
             <a href="#" class="dropbtn">Servicios</a>
             <ul class="dropdown-content">
-            <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
-            <li><a href="../Pages/coachingIndividual.php">Coaching individual</a></li>
+                <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
+                <li><a href="../Pages/coachingIndividual.php">Coaching individual</a></li>
             </ul>
-        </li> 
-        <!--    <li style="float: right;"><button class="btn btn-outline-primary navBtn" id="loginButton">INGRESAR</button></li>
-        <li><button class="btn btn-outline-primary navBtn2" id="loginButton">INGRESAR</button></li> -->
-      </ul>';
+        </li>
+        <li style="float: right;"><button class="btn btn-outline-primary navBtn" id="loginButton1">INGRESAR</button></li>
+        <li><button class="btn btn-outline-primary navBtn2" id="loginButton2">INGRESAR</button></li>
+    </ul>';
     }
     ?> 
    
     
         </nav>
     </header>
-    <section> 
+    <script>
+      /*SCRIPT DE LOS POPUPS DE CURSOS*/
+  function mostrarModal() {
+    var modal = document.querySelector('.containerModal');
+    modal.style.display = 'flex';
+  }
+
+  function cerrarModal() {
+    var modal = document.querySelector('.containerModal');
+    modal.style.display = 'none';
+  }
+  
+  function mostrarModal2() {
+    var modal = document.querySelector('.containerModal2');
+    modal.style.display = 'flex';
+  }
+
+  function cerrarModal2() {
+    var modal = document.querySelector('.containerModal2');
+    modal.style.display = 'none';
+  }
+  
+  function mostrarModal3() {
+    var modal = document.querySelector('.containerModal3');
+    modal.style.display = 'flex';
+  }
+
+  function cerrarModal3() {
+    var modal = document.querySelector('.containerModal3');
+    modal.style.display = 'none';
+  }
+</script>
+<script>
+    // Funciones para mostrar y ocultar popups
+    function togglePopup(popupId) {
+        var popup = document.getElementById(popupId);
+        var overlay = document.getElementById('popupOverlay');
+        if (popup.style.display === 'none' || !popup.style.display) {
+            popup.style.display = 'flex';
+            overlay.style.display = 'block';
+        } else {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('loginButton1').addEventListener('click', function() {
+            togglePopup('popup');
+        });
+
+        document.getElementById('loginButton2').addEventListener('click', function() {
+            togglePopup('popup');
+        });
+
+        document.getElementById('closeButton').addEventListener('click', function() {
+            togglePopup('popup');
+        });
+
+        document.getElementById('closeButton2').addEventListener('click', function() {
+            togglePopup('popup2');
+        });
+
+        document.getElementById('registerLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            togglePopup('popup');
+            togglePopup('popup2');
+        });
+
+        document.getElementById('loginLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            togglePopup('popup2');
+            togglePopup('popup');
+        });
+    });
+</script>
+
+
+<!--SCRIPT PARA CERRAR LOS POPUP-->
+<script>
+        // Función para cerrar el popup
+        function cerrarPopup(popupId) {
+            let popup = document.getElementById(popupId);
+            popup.style.display = 'none';
+            document.getElementById('popupOverlay').style.display = 'none';
+        }
+
+        // Agregar eventos a los botones
+        document.getElementById('closeButton').addEventListener('click', function() {
+            cerrarPopup('popup');
+        });
+
+        document.getElementById('closeButton2').addEventListener('click', function() {
+            cerrarPopup('popup2');
+        });
+
+    
+    </script>
+
+<!--SCRIPT PARA EL SWITCH DE POPUP-->
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const registerLink = document.getElementById('registerLink');
+        const loginLink = document.getElementById('loginLink');
+        const popup = document.getElementById('popup');
+        const popup2 = document.getElementById('popup2');
+        const popupOverlay = document.getElementById('popupOverlay');
+
+        registerLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            popup.style.display = 'none';
+            popup2.style.display = 'block';
+            popupOverlay.style.display = 'block'; // Ensure the overlay remains visible
+        });
+
+        loginLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            popup2.style.display = 'none';
+            popup.style.display = 'block';
+            popupOverlay.style.display = 'block'; // Ensure the overlay remains visible
+        });
+    });
+</script>
+    <section>
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup" id="popup">
+            <button class="closeButton" id="closeButton">X</button>
+            <div class="loginData">
+                <h2>Inicia sesión</h2>
+                <img src="../img/Linea.png" alt="">
+                <form method="POST" id="loginForm">
+
+                    <label for="email">Email:</label>
+                    <input class="inputEmail" type="text" id="loginEmail" name="email" required><br>
+                    <label for="password">Contraseña:</label>
+                    <input class="inputPassword" type="password" id="loginPassword" name="password" required><br>
+                    <input class="inputSubmit" type="submit" value="Iniciar sesión">
+                </form>
+                <p>No tienes una cuenta? <a href="#" id="registerLink">Regístrate</a></p>
+            </div>
+        </div>
+        <div class="popup2" id="popup2">
+            <button class="closeButton" id="closeButton2">X</button>
+            <div class="registerData">
+                <h2>Regístrate</h2>
+                <img src="../img/Linea.png" alt="">
+                <form method="POST" id="registerForm">
+                    <label for="username">Usuario:</label>
+                    <input class="inputName" type="text" id="registerUsername" name="username" required><br>
+                    <label for="email">Email:</label>
+                    <input class="inputEmail" type="text" id="registerEmail" name="email" required><br>
+                    <label for="password">Contraseña:</label>
+                    <input class="inputPassword" type="password" id="registerPassword" name="password" required><br>
+                    <input type="number" value="2" name="role_id" id="role_id" style="display:none">
+                    <input class="inputSubmit" type="submit" value="Registrar">
+                </form>
+                <p>¿Ya tienes una cuenta? <a href="#" id="loginLink">Inicia Sesión</a></p>
+            </div>
+        </div>
+    </div> 
         <div class="bgCompraCont">
                 <?php
                 $valorDeComunidad = "$28,000";
@@ -97,6 +282,75 @@ session_start();
             <img class="imgCompra" src="../img/ComunidadWeb2.png" alt="">
         </div>
     </section> 
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            var email = document.getElementById('loginEmail').value;
+            var password = document.getElementById('loginPassword').value;
+
+            fetch('./User/login.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({
+      
+                    'email': email,
+                    'password': password
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    localStorage.setItem('user_id', data.user_id);
+                    localStorage.setItem('username', data.username);
+                    localStorage.setItem('email', data.email);
+                    localStorage.setItem('role_id', data.role_id);
+                    alert('Login exitoso');
+                     window.location.href = './pages/escritorioDelAlumno.php';
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var username = document.getElementById('registerUsername').value;
+            var email = document.getElementById('registerEmail').value;
+            var password = document.getElementById('registerPassword').value;
+
+            fetch('./User/register.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({
+                    'username': username,
+                    'email': email,
+                    'password': password,
+                    'role_id': 2 // Asumimos que el rol por defecto es "User"
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    localStorage.setItem('user_id', data.user_id);
+                    localStorage.setItem('username', data.username);
+                    localStorage.setItem('email', data.email);
+                    localStorage.setItem('role_id', data.role_id);
+                    alert('Registro exitoso');
+                    // window.location.href = 'dashboard.html';
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+    
     <footer>
         <div class="footerCont">
             <div class="footerImg">
