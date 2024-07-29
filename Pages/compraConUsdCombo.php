@@ -5,6 +5,59 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: ../index.php');
     exit();
 }
+// Definir la URL base de tu aplicación
+define('BASE_URL', '../'); // Asegúrate de ajustar esto según la URL base real de tu sitio
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['course_id'], $_POST['course_name'], $_POST['image_path'], $_POST['precio'])) {
+        $course_id = htmlspecialchars($_POST['course_id']);
+        $course_name = htmlspecialchars($_POST['course_name']);
+        $imagenCurso = htmlspecialchars($_POST['image_path']);
+        $precio = floatval($_POST['precio']);
+    } else {
+        echo "Faltan parámetros en la solicitud.";
+        exit;
+    }
+} else {
+    echo "Método de solicitud no permitido.";
+    exit;
+}
+
+$endpoint =  /* //"https://api-3t.sandbox.paypal.com/nvp"; Usa  */"https://api-3t.paypal.com/nvp"; // para producción
+$version = "204.0";
+$method = "SetExpressCheckout";
+
+// Datos para la solicitud
+$data = [
+    'METHOD' => $method,
+    'VERSION' => $version,
+    'USER' => 'mariana.mastropietro.eventos_api1.gmail.com',
+    'PWD' => 'AHMMWVDUXZL8BFG2',
+    'SIGNATURE' => 'AivkqA-4YffFBBGV3wGe3au-MPQxABr91Vusm2sIZ7iH2sOcWeW7mBbI',
+    'RETURNURL' => 'http://localhost/maraiana-main/maraiana/Backend/paypal_success.php',
+    'CANCELURL' => 'http://localhost/maraiana-main/maraiana/Backend/cancel.php',
+    'PAYMENTREQUEST_0_AMT' => $precio,
+    'PAYMENTREQUEST_0_CURRENCYCODE' => 'USD'
+];
+
+$queryString = http_build_query($data);
+
+// Enviar solicitud
+$response = file_get_contents($endpoint . '?' . $queryString);
+parse_str($response, $parsedResponse);
+
+// Redirigir al usuario a PayPal
+if (isset($parsedResponse['TOKEN'])) {
+    $approvalUrl = "https://www.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=" . $parsedResponse['TOKEN'];
+    header("Location: $approvalUrl");
+    exit();
+} else {
+    echo "Error en la respuesta de PayPal: " . $response;
+}
+
+// Construir la ruta de la imagen
+$image_path = BASE_URL . ltrim(htmlspecialchars($imagenCurso), '/');
+?>
+
 ?>
 
 <!DOCTYPE html>

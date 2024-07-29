@@ -19,7 +19,28 @@ if (isset($_GET['id'], $_GET['course_name'], $_GET['image_path'], $_GET['precio_
     $precio_argentina = $_GET['precio_argentina'];
     $precio_internacional = $_GET['precio_internacional'];
 
+// Datos del curso
+$stmt = $conn->prepare("SELECT * FROM courses WHERE id = :id");
+$stmt->bindParam(':id', $curso_id);
+$stmt->execute();
+$curso = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if ($curso) {
+    $nombreCurso = $curso['course_name'];
+    $imagenCurso = $curso['image_path'];
+    $precioARS = $curso['precio_argentina'];
+    $precioUSD = $curso['precio_internacional'];
+} else {
+    echo "Curso no encontrado.";
+    exit;
 }
+} else {
+echo "No se han pasado todos los parámetros necesarios.";
+exit;
+}
+
+
+
 // Construir la ruta de la imagen
 $image_path = BASE_URL . ltrim(htmlspecialchars($imagenCurso), '/');
 ?>
@@ -103,20 +124,20 @@ $image_path = BASE_URL . ltrim(htmlspecialchars($imagenCurso), '/');
            
             <div class="cursosCont">
                  <h2>CONTRATAR CURSO</h2>
-                <div class="comprarCursoCont1">
-                    <button>
-                    <a href="../Pages/compraConArsCombo.php">
-                    <p class="valorArs"><?php  echo $valorDeCurso; ?></p>
-                    <p class="pData">Comprar en pesos argentinos</p>
-                    </button>
-                </div>            
-                <div class="comprarCursoCont1">
-                    <button>
-                    <a href="../Pages/compraConUsdCombo.php">
-                    <p class="valorUsd"><?php echo $valorDeCursoUSD; ?></p>
-                    <p class="pData">Comprar en dolares</p>
-                    </button>
-                </div>
+                 <form class="form1" action="compraConArs.php" method="POST">
+                    <input type="hidden" name="course_id" value="<?php echo htmlspecialchars($curso_id); ?>">
+                    <input type="hidden" name="course_name" value="<?php echo htmlspecialchars($nombreCurso); ?>">
+                    <input type="hidden" name="image_path" value="<?php echo htmlspecialchars($imagenCurso); ?>">
+                    <input type="hidden" name="precio" value="<?php echo htmlspecialchars($precioARS); ?>">
+                    <button type="submit" class="btn btn-primary mp">Pagar con MercadoPago</button>
+                </form>
+                <form class="form2" action="compraConUsd.php" method="POST">
+                    <input type="hidden" name="course_id" value="<?php echo htmlspecialchars($curso_id); ?>">
+                    <input type="hidden" name="course_name" value="<?php echo htmlspecialchars($nombreCurso); ?>">
+                    <input type="hidden" name="image_path" value="<?php echo htmlspecialchars($imagenCurso); ?>">
+                    <input type="hidden" name="precio" value="<?php echo htmlspecialchars($precioUSD); ?>">
+                    <button type="submit" class="btn btn-secondary pp">Pagar con PayPal</button>
+                </form>
             </div>   
             <img class="cursoImg" src="<?php echo $image_path; ?>" alt="Imagen del curso">
         </div>
