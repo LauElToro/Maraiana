@@ -38,7 +38,7 @@ $items = [
         "id" => $course_id,
         "title" => $course_name,
         "quantity" => 1,
-        "unit_price" => /* $precio */1/* cambiar despes de las pruebas */
+        "unit_price" =>$precio 
     ]
 ];
 
