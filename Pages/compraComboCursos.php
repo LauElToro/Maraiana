@@ -124,14 +124,14 @@ $image_path = BASE_URL . ltrim(htmlspecialchars($imagenCurso), '/');
            
             <div class="cursosCont">
                  <h2>CONTRATAR CURSO</h2>
-                 <form class="form1" action="compraConArs.php" method="POST">
+                 <form class="form1" action="compraConArsCombo.php" method="POST">
                     <input type="hidden" name="course_id" value="<?php echo htmlspecialchars($curso_id); ?>">
                     <input type="hidden" name="course_name" value="<?php echo htmlspecialchars($nombreCurso); ?>">
                     <input type="hidden" name="image_path" value="<?php echo htmlspecialchars($imagenCurso); ?>">
                     <input type="hidden" name="precio" value="<?php echo htmlspecialchars($precioARS); ?>">
                     <button type="submit" class="btn btn-primary mp">Pagar con MercadoPago</button>
                 </form>
-                <form class="form2" action="compraConUsd.php" method="POST">
+                <form class="form2" action="compraConUsdCombo.php" method="POST">
                     <input type="hidden" name="course_id" value="<?php echo htmlspecialchars($curso_id); ?>">
                     <input type="hidden" name="course_name" value="<?php echo htmlspecialchars($nombreCurso); ?>">
                     <input type="hidden" name="image_path" value="<?php echo htmlspecialchars($imagenCurso); ?>">
