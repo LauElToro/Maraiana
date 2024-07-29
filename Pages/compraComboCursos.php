@@ -129,14 +129,14 @@ $image_path = BASE_URL . ltrim(htmlspecialchars($imagenCurso), '/');
                     <input type="hidden" name="course_name" value="<?php echo htmlspecialchars($nombreCurso); ?>">
                     <input type="hidden" name="image_path" value="<?php echo htmlspecialchars($imagenCurso); ?>">
                     <input type="hidden" name="precio" value="<?php echo htmlspecialchars($precioARS); ?>">
-                    <button type="submit" class="btn btn-primary mp">Pagar con MercadoPago</button>
+                    <button class="mp" type="submit" class="btn btn-primary mp">Pagar con MercadoPago</button>
                 </form>
                 <form class="form2" action="compraConUsd.php" method="POST">
                     <input type="hidden" name="course_id" value="<?php echo htmlspecialchars($curso_id); ?>">
                     <input type="hidden" name="course_name" value="<?php echo htmlspecialchars($nombreCurso); ?>">
                     <input type="hidden" name="image_path" value="<?php echo htmlspecialchars($imagenCurso); ?>">
                     <input type="hidden" name="precio" value="<?php echo htmlspecialchars($precioUSD); ?>">
-                    <button type="submit" class="btn btn-secondary pp">Pagar con PayPal</button>
+                    <button class="pp"  type="submit" class="btn btn-secondary pp">Pagar con PayPal</button>
                 </form>
             </div>   
             <img class="cursoImg" src="<?php echo $image_path; ?>" alt="Imagen del curso">
