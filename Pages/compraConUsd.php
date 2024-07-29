@@ -78,56 +78,6 @@ $image_path = BASE_URL . ltrim(htmlspecialchars($imagenCurso), '/');
 <body>   
     <header>
         <nav>
-<<<<<<< HEAD
-            <div class="redesNavbar">
-                <a href="###"><img class="youtubeLink" src="../img/Youtube.png" alt=""></a>
-                <a href="###"><img class="instagramLink" src="../img/Instagram.png" alt=""></a>
-                <a href="###"><img class="wasapLink" src="../img/Wasap.png" alt=""></a>
-                <a href="###"><img class="tiktokLink" src="../img/Tiktok.png" alt=""></a>
-            </div>
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <img src="../img/Bars.png" alt="">
-            </label>
-            <a href="../index.php" class="enlace">
-                <img src="../img/Logo2.png" alt="" class="Logo2">
-                <img src="../img/Logo.png" alt="" class="Logo">
-            </a>
-            <?php
-            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-                // Si el usuario está autenticado, mostrar enlace al perfil y al cierre de sesión
-                echo '<ul>
-                <li><a href="../index.php">Inicio</a></li>
-                <li><a href="../Pages/cursos.php">Cursos</a></li>
-                <li><a href="../Pages/comunidad.php">Comunidad</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Servicios</a>
-                    <ul class="dropdown-content">
-                        <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
-                        <li><a href="../Pages/coachingIndividual.php">Coaching individual</a></li>
-                    </ul>
-                </li>
-                <li><a href="../Pages/escritorioDelAlumno.php">Escritorio de alumno</a></li>
-                <li><a href="../User/logout.php">Cerrar Sesión</a></li>
-                </ul>';
-            } else {
-                // Si el usuario no está autenticado, mostrar enlaces de inicio de sesión y registro
-                echo '<ul>
-                <li><a href="../index.php">Inicio</a></li>
-                <li><a href="../Pages/comunidad.php">Comunidad</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Servicios</a>
-                    <ul class="dropdown-content">
-                        <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
-                        <li><a href="../Pages/coachingIndividual.php">Coaching individual</a></li>
-                    </ul>
-                </li>
-                <li style="float: right;"><button class="btn btn-outline-primary navBtn" id="loginButton1">INGRESAR</button></li>
-                <li><button class="btn btn-outline-primary navBtn2" id="loginButton2">INGRESAR</button></li>
-                </ul>';
-            }
-            ?> 
-=======
             
         <div class="redesNavbar">
             <a href="https://www.linkedin.com/in/mariana-mastropietro-artista?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><img  class="linkedinLink"  src="../img/linkedin1.png" alt=""></a>
@@ -158,8 +108,8 @@ $image_path = BASE_URL . ltrim(htmlspecialchars($imagenCurso), '/');
             </ul>
         </li>
         <li><a href="../Pages/escritorioDelAlumno.php">Escritorio de alumno</a></li>
-        <li style="float: right;"><button class="btn btn-outline-primary navBtn" id="loginButton1"><a href="../User/logout.php">Cerrar Sesión</a></button></li>
-        <li><button class="btn btn-outline-primary navBtn2" id="loginButton2"><a href="../User/logout.php">Cerrar Sesión</a></button></li>
+        <li style="float: right;"><button class="btn btn-outline-primary navBtn"><a href="../User/logout.php">Cerrar Sesión</a></button></li>
+        <li><button class="btn btn-outline-primary navBtn2"><a href="../User/logout.php">Cerrar Sesión</a></button></li>
     </ul>';
     } else {
         // Si el usuario no está autenticado, mostrar enlaces de inicio de sesión y registro
@@ -178,7 +128,6 @@ $image_path = BASE_URL . ltrim(htmlspecialchars($imagenCurso), '/');
     </ul>';
     }
     ?> 
->>>>>>> ec04df2785cf41159ab0447a9cd8b9f645726153
         </nav>
     </header>
     <section>
