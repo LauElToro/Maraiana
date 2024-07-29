@@ -1,16 +1,15 @@
 <?php
 require '../auth.php';
-
 // Verificar si el usuario está logueado
 require_login();
 
 include '../db/config.php';
-/* 
+
 // Verificar si el usuario está autenticado
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: ../index.php');
     exit();
-} */
+} 
 
 // Obtener datos del usuario desde la base de datos
 $user_id = $_SESSION['user_id'];
@@ -149,11 +148,11 @@ $_SESSION['email'] = $user['email'];
             </div>
             <div class="data2">
                 <img src="../img/Persona2.png" alt=""> 
-                <p>0<br>Cursos Inscriptos</p>             
+                <p>0<br>Cursos en proceso</p>             
             </div>
             <div class="data3">
                 <img src="../img/Trofeo.png" alt=""> 
-                <p>0<br>Cursos Inscriptos</p>             
+                <p>0<br>Finalizados</p>             
             </div>
         </div>
     </div>
