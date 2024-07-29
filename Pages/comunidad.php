@@ -1,26 +1,21 @@
 <?php
 session_start();
-// Verificar si el usuario está autenticado
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header('Location: ../index.php');
-    exit();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/navbar.css">
-    <link rel="stylesheet" type="text/css" href="../css/comunidad.css">
-    <link rel="stylesheet" type="text/css" href="../css/login.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="../img/Ellipse 4.png" rel="icon">
-    <script src="https://kit.fontawesome.com/d5da104675.js" crossorigin="anonymous"></script>
-    <link href="../img/Ellipse 4.png" rel="icon">
-    <title>Comunidad</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/navbar.css">
+        <link rel="stylesheet" type="text/css" href="../css/comunidad.css">
+        <link rel="stylesheet" type="text/css" href="../css/login.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="../img/Ellipse 4.png" rel="icon">
+        <script src="https://kit.fontawesome.com/d5da104675.js" crossorigin="anonymous"></script>
+        <link href="../img/Ellipse 4.png" rel="icon">
+        <title>Comunidad</title>
+    </head>
+    <body>
     <header>
         <nav>
             <div class="redesNavbar">
@@ -30,48 +25,48 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                 <a href="https://api.whatsapp.com/send/?phone=5491140431611&text=Hola+me+interesan+las+clases+de+canto+%3A+Liber%C3%A1+tu+voz&type=phone_number&app_absent=0" target="_blank"><img  class="wasapLink"  src="../img/Wasap.png" alt=""></a>
                 <a href="https://www.tiktok.com/@mariana.profedecanto" target="_blank"><img  class="tiktokLink"  src="../img/Tiktok.png" alt=""></a>
             </div>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <img src="../img/menu.png" alt="">
-        </label>
-        <a href="../index.php" class="enlace">
-            <img src="../img/Logo2.png" alt="" class="Logo2">
-            <img src="../img/Logo.png" alt="" class="Logo">
-        </a>
-    <?php
-    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-        // Si el usuario está autenticado, mostrar enlace al perfil y al cierre de sesión
-        echo '<ul>
-        <li><a href="../index.php">Inicio</a></li>
-        <li><a href="../Pages/cursos.php">Cursos</a></li>
-        <li><a href="../Pages/comunidad.php">Comunidad</a></li><li class="dropdown">
-            <a href="#" class="dropbtn">Servicios</a>
-            <ul class="dropdown-content">
-                <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
-                <li><a href="../Pages/coachingIndividual.php">Coaching individual</a></li>
-            </ul>
-        </li>
-        <li><a href="../Pages/escritorioDelAlumno.php">Escritorio de alumno</a></li>
-        <li style="float: right;"><button class="btn btn-outline-primary navBtn"><a href="../User/logout.php">Cerrar Sesión</a></button></li>
-        <li><button class="btn btn-outline-primary navBtn2"><a href="../User/logout.php">Cerrar Sesión</a></button></li>
-    </ul>';
-    } else {
-        // Si el usuario no está autenticado, mostrar enlaces de inicio de sesión y registro
-        echo '<ul>
-        <li><a href="../index.php">Inicio</a></li>
-        <li><a href="../Pages/comunidad.php">Comunidad</a></li>
-        <li class="dropdown">
-            <a href="#" class="dropbtn">Servicios</a>
-            <ul class="dropdown-content">
-                <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
-                <li><a href="../Pages/coachingIndividual.php">Coaching individual</a></li>
-            </ul>
-        </li>
-        <li style="float: right;"><button class="btn btn-outline-primary navBtn" id="loginButton1">INGRESAR</button></li>
-        <li><button class="btn btn-outline-primary navBtn2" id="loginButton2">INGRESAR</button></li>
-    </ul>';
-    }
-    ?> 
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <img src="../img/menu.png" alt="">
+            </label>
+            <a href="../index.php" class="enlace">
+                <img src="../img/Logo2.png" alt="" class="Logo2">
+                <img src="../img/Logo.png" alt="" class="Logo">
+            </a>
+        <?php
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+            // Si el usuario está autenticado, mostrar enlace al perfil y al cierre de sesión
+            echo '<ul>
+            <li><a href="../index.php">Inicio</a></li>
+            <li><a href="../Pages/cursos.php">Cursos</a></li>
+            <li><a href="../Pages/comunidad.php">Comunidad</a></li><li class="dropdown">
+                <a href="#" class="dropbtn">Servicios</a>
+                <ul class="dropdown-content">
+                    <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
+                    <li><a href="../Pages/coachingIndividual.php">Coaching individual</a></li>
+                </ul>
+            </li>
+            <li><a href="../Pages/escritorioDelAlumno.php">Escritorio de alumno</a></li>
+            <li style="float: right;"><button class="btn btn-outline-primary navBtn"><a href="../User/logout.php">Cerrar Sesión</a></button></li>
+            <li><button class="btn btn-outline-primary navBtn2"><a href="../User/logout.php">Cerrar Sesión</a></button></li>
+        </ul>';
+        } else {
+            // Si el usuario no está autenticado, mostrar enlaces de inicio de sesión y registro
+            echo '<ul>
+            <li><a href="../index.php">Inicio</a></li>
+            <li><a href="../Pages/comunidad.php">Comunidad</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Servicios</a>
+                <ul class="dropdown-content">
+                    <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
+                    <li><a href="../Pages/coachingIndividual.php">Coaching individual</a></li>
+                </ul>
+            </li>
+            <li style="float: right;"><button class="btn btn-outline-primary navBtn" id="loginButton1">INGRESAR</button></li>
+            <li><button class="btn btn-outline-primary navBtn2" id="loginButton2">INGRESAR</button></li>
+        </ul>';
+        }
+        ?> 
         </nav>
     </header>
     <script>
@@ -85,19 +80,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             popup.style.display = "none";
         }
     </script>
-<!-- Este script debe estar al final del archivo HTML, después de definir el popup -->
-
-
-
-
-<?php 
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-require_once('..\db\config.php');
-
-?>
-
 
 
 <!--SCRIPT PARA EL BOTON DEL NAVBAR-->
