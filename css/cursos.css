@@ -108,6 +108,9 @@ section{
     width: 400px;
     height: 400px;
 }
+.comboImg{
+    width: 650px;
+}
 .comboCursosBg{
     background-color: #fff;
     padding-top: 10%;
@@ -382,7 +385,7 @@ footer{
     border-radius: 20px;
 }
 .comboCursosBg{
-    margin-top: 25%;
+    padding-top: 25%;
     display: flex;
     align-items: center;
     flex-direction: column;
