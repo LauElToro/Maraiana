@@ -135,7 +135,7 @@ if (isset($_GET['course_id'])) {
             </div>
             <div class="cursoBtnData">
                 <button>
-                <a href="./compra.php">Adquirir cursos</a>
+                <a href="./cursos.php">Adquirir cursos</a>
                 </button>
             </div>
         </div>
