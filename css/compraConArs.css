@@ -70,9 +70,9 @@ form .inputCont{
 .bgSubCont1 h4{
     font-size: 30px;
 }
-.bgSubCont1 img{
+.imagenCursoCompra{
     width: 450px;
-    height: 250px;
+    height: 350px;
 }
 .bgSubCont2{
     display: none;
@@ -86,6 +86,9 @@ form .inputCont{
     margin-top: 2%;
     margin-bottom: 5%;
     flex-direction: row;
+}
+.cursosComboCompra{
+    width: 500px;
 }
 .arsBtn{
     padding: 10px 25px 10px 25px;
@@ -135,6 +138,12 @@ footer{
     flex-direction: column;
 }
 
+@media screen and (max-width: 991px) {
+    .cursosComboCompra{
+        width: 400px;
+    }
+}
+
 @media (max-width: 768px){
 .bgCont1{
     width: 100%;
@@ -142,6 +151,13 @@ footer{
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+.imagenCursoCompra{
+    width: 300px;
+    height: 250px;
+}
+.cursosComboCompra{
+    width: 90%;
 }
 form{
     width: 80%;

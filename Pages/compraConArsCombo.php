@@ -23,12 +23,13 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 <body>   
     <header>
         <nav>
-            <div class="redesNavbar">
-                <a href="###"><img  class="youtubeLink"  src="../img/Youtube.png" alt=""></a>
-                <a href="###"><img  class="instagramLink"  src="../img/Instagram.png" alt=""></a>
-                <a href="###"><img  class="wasapLink"  src="../img/Wasap.png" alt=""></a>
-                <a href="###"><img  class="tiktokLink"  src="../img/Tiktok.png" alt=""></a>
-                </div>
+        <div class="redesNavbar">
+            <a href="https://www.linkedin.com/in/mariana-mastropietro-artista?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><img  class="linkedinLink"  src="../img/linkedin1.png" alt=""></a>
+            <a href="https://www.youtube.com/channel/UCxXlYyH8jRpGXeqQTe0PfhQ" target= "_blank"><img  class="youtubeLink"  src="../img/yout1.png" alt=""></a>
+                <a href="https://www.instagram.com/mariana.profedecanto/" target="_blank"><img  class="instagramLink"  src="../img/Instagram.png" alt=""></a>
+                <a href="https://api.whatsapp.com/send/?phone=5491140431611&text=Hola+me+interesan+las+clases+de+canto+%3A+Liber%C3%A1+tu+voz&type=phone_number&app_absent=0" target="_blank"><img  class="wasapLink"  src="../img/Wasap.png" alt=""></a>
+                <a href="https://www.tiktok.com/@mariana.profedecanto" target="_blank"><img  class="tiktokLink"  src="../img/Tiktok.png" alt=""></a>
+        </div>
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
             <img src="../img/Bars.png" alt="">
@@ -51,7 +52,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             </ul>
         </li>
         <li><a href="../Pages/escritorioDelAlumno.php">Escritorio de alumno</a></li>
-          <li><a href="../User/logout.php">Cerrar Sesión</a></li>
+        <li style="float: right;"><button class="btn btn-outline-primary navBtn" id="loginButton1"><a href="../User/logout.php">Cerrar Sesión</a></button></li>
+        <li><button class="btn btn-outline-primary navBtn2" id="loginButton2"><a href="../User/logout.php">Cerrar Sesión</a></button></li>
     </ul>';
     } else {
         // Si el usuario no está autenticado, mostrar enlaces de inicio de sesión y registro
@@ -109,7 +111,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             <div class="subCont2">
                 <div class="bgSubCont1">
                     <h4>PAGO</h4>
-                    <img src="../img/Combo3cursos.png" alt="">
+                    <img class="cursosComboCompra" src="../img/Combo3cursos.png" alt="">
                 </div>
                 <div class="bgSubCont2">
                     <h4>TOTAL</h4>

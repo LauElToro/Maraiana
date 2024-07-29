@@ -121,7 +121,9 @@ footer{
     align-items: center;
     flex-direction: column;
 }
-
+.comboImgCompra{
+    width: 650px;
+}
 @media (max-width: 1199px){
 .bgCompraCont{
     display: flex;
@@ -175,6 +177,9 @@ footer{
         width: 80%;
         height: 400px;
         border-radius: 25px;
+    }
+    .comboImgCompra{
+        width: 100%;
     }
 
     .footerImg img{

@@ -1,6 +1,9 @@
 *{
     font-family: "Montserrat", sans-serif;
 }
+.saludoEscritorio{
+    margin-left: 2%;
+}
 .verCursoSection{
     width: 100%;
     display: flex;
