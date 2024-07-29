@@ -71,8 +71,7 @@ form .inputCont{
     font-size: 30px;
 }
 .imagenCursoCompra{
-    width: 450px;
-    height: 350px;
+    width: 500px;
 }
 .bgSubCont2{
     display: none;
@@ -138,13 +137,7 @@ footer{
     flex-direction: column;
 }
 
-@media screen and (max-width: 991px) {
-    .cursosComboCompra{
-        width: 400px;
-    }
-}
-
-@media (max-width: 768px){
+@media (max-width: 991px){
 .bgCont1{
     width: 100%;
     margin-top: 15%;
@@ -153,8 +146,8 @@ footer{
     flex-direction: column;
 }
 .imagenCursoCompra{
-    width: 300px;
-    height: 250px;
+    width: 600px;
+    height: 350px;
 }
 .cursosComboCompra{
     width: 90%;
@@ -277,4 +270,10 @@ footer{
 .footerContacto{
     margin-top: 10%;
 }
+}
+@media screen and (max-width: 767px) {
+    .imagenCursoCompra{
+        width: 90%;
+        height: auto;
+    }
 }
