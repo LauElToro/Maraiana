@@ -53,7 +53,7 @@
     margin-top: 5%;
     margin: auto;
     width: 65%;
-    height: 60vh;
+    height: auto;
     background-color: #D9D9D9;
     border-radius: 20px;
 }
@@ -74,8 +74,9 @@
     font-weight: 500;
 }
 .preguntasData button{
-    margin-top: 5%;
-    padding: 20px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 15px 20px;
     border-radius: 20px;
     background-color: #743C99;
     border: none;
@@ -166,13 +167,12 @@ footer{
     margin-top: 5%;
     width: 65%;
     height: 82vh;
-    border: 2px solid #000;
+    background-color: #D9D9D9;
     border-radius: 20px;
-    background-color: #fff;
 }
 .preguntasDataCont{
+    background-color: #fff;
     padding: 15px;
-    background-color: #D9D9D9;
     margin-top: 5%;
     border-radius: 20px;
 }
