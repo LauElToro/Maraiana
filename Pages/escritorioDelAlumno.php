@@ -137,9 +137,10 @@ $_SESSION['email'] = $user['email'];
                 </button>        
                 <button>
                     <a href="./coachingIndividual.php">Coaching</a>
-                </button>        
+                </button>     
+                <button>   
                 <a href="../User/logout.php">Salir</a>
-                
+                </button>
         </div>
         <div class="escritorioData">
             <div class="data1">

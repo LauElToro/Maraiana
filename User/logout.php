@@ -1,5 +1,4 @@
 <?php
-require 'auth.php';
 
 // Cerrar sesión
 logout();
