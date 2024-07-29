@@ -1,4 +1,30 @@
+<?php
+session_start();
 
+include '../db/config.php';
+/* 
+// Verificar si el usuario está autenticado
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: ../index.php');
+    exit();
+} */
+
+// Obtener datos del usuario desde la base de datos
+$user_id = $_SESSION['user_id'];
+$stmt = $conn->prepare("SELECT username, email FROM users WHERE id = ?");
+$stmt->execute([$user_id]);
+$user = $stmt->fetch();
+
+if (!$user) {
+    echo "Usuario no encontrado.";
+    exit();
+}
+
+// Establecer las variables de sesión
+$_SESSION['username'] = $user['username'];
+$_SESSION['email'] = $user['email'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,6 +85,10 @@
     }
     ?>
         </nav>
+        <br>
+        <div>
+            <h1>hola <?php echo htmlspecialchars($_SESSION['username']); ?> </h1>
+        </div>
     </header>
 		<div class="btn-menu">
 			<label for="btn-menu">☰</label>

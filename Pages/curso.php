@@ -96,7 +96,10 @@ if ($course_id && $part_number) {
       </ul>';
     }
     ?> 
-        </nav>
+        </nav><br>
+        <div>
+            <h1>hola <?php echo htmlspecialchars($_SESSION['username']); ?> </h1>
+        </div>
     </header>
     <div class="verCursoSection">
         <div class="verCursoSubCont1">
