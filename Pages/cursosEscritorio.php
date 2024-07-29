@@ -158,15 +158,15 @@ $user_courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </a>
                 </div>
             <?php endforeach; ?>
+        </div>
+    <?php else: ?>
+        <p>No hay cursos disponibles.</p>
+    <?php endif; ?>
     <div class="cursoBtnData">
         <button>
             <a href="./cursos.php">Adquirir cursos</a>
         </button>
     </div>
-        </div>
-    <?php else: ?>
-        <p>No hay cursos disponibles.</p>
-    <?php endif; ?>
 </div>
 
 

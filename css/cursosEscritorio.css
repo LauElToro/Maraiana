@@ -51,7 +51,7 @@
 }
 .cursoList {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     overflow-x: auto; 
     gap: 20px; /* Espacio entre las imágenes */
 }
@@ -164,7 +164,7 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
 }
 .btnWebEsc{
     display: none;
