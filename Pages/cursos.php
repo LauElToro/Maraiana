@@ -423,7 +423,7 @@ if (!empty($courses)) {
 
 <div class="comboCursosBg">
     <?php if ($imagePath): ?>
-        <img src="../<?php echo htmlspecialchars($imagePath); ?>" alt="<?php echo htmlspecialchars($courseName); ?>">
+        <img class="comboImg" src="../<?php echo htmlspecialchars($imagePath); ?>" alt="<?php echo htmlspecialchars($courseName); ?>">
         <button class="contratarBtn2">
             <a href="compraComboCursos.php?id=<?php echo htmlspecialchars($courseId); ?>&course_name=<?php echo urlencode($courseName); ?>&image_path=<?php echo urlencode($imagePath); ?>&precio_argentina=<?php echo urlencode($precioArgentina); ?>&precio_internacional=<?php echo urlencode($precioInternacional); ?>">
                 Ver este combo
