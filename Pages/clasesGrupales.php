@@ -86,20 +86,6 @@ session_start();
             popup.style.display = "none";
         }
     </script>
-<!-- Este script debe estar al final del archivo HTML, después de definir el popup -->
-
-
-
-
-<?php 
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-require_once('..\db\config.php');
-
-?>
-
-
 
 <!--SCRIPT PARA EL BOTON DEL NAVBAR-->
 
@@ -212,6 +198,76 @@ require_once('..\db\config.php');
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            var email = document.getElementById('loginEmail').value;
+            var password = document.getElementById('loginPassword').value;
+
+            fetch('../User/login.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({
+      
+                    'email': email,
+                    'password': password
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    localStorage.setItem('user_id', data.user_id);
+                    localStorage.setItem('username', data.username);
+                    localStorage.setItem('email', data.email);
+                    localStorage.setItem('role_id', data.role_id);
+                    alert('Login exitoso');
+                     window.location.href = 'escritorioDelAlumno.php';
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var username = document.getElementById('registerUsername').value;
+            var email = document.getElementById('registerEmail').value;
+            var password = document.getElementById('registerPassword').value;
+
+            fetch('../User/register.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({
+                    'username': username,
+                    'email': email,
+                    'password': password,
+                    'role_id': 2 // Asumimos que el rol por defecto es "User"
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    localStorage.setItem('user_id', data.user_id);
+                    localStorage.setItem('username', data.username);
+                    localStorage.setItem('email', data.email);
+                    localStorage.setItem('role_id', data.role_id);
+                    alert('Registro exitoso');
+                    // window.location.href = 'dashboard.html';
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+
         <div class="bgCont1">
             <div class="bgSubCont1">
                 <img src="../img/ClasesGrupalesCompra.png" alt="">

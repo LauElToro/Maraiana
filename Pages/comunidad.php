@@ -199,7 +199,7 @@ session_start();
             var email = document.getElementById('loginEmail').value;
             var password = document.getElementById('loginPassword').value;
 
-            fetch('./User/login.php', {
+            fetch('../User/login.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
@@ -218,7 +218,7 @@ session_start();
                     localStorage.setItem('email', data.email);
                     localStorage.setItem('role_id', data.role_id);
                     alert('Login exitoso');
-                     window.location.href = 'Pages/escritorioDelAlumno.php';
+                     window.location.href = 'escritorioDelAlumno.php';
                 } else {
                     alert(data.message);
                 }
@@ -232,7 +232,7 @@ session_start();
             var email = document.getElementById('registerEmail').value;
             var password = document.getElementById('registerPassword').value;
 
-            fetch('./User/register.php', {
+            fetch('../User/register.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
