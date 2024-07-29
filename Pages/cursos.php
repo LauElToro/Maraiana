@@ -140,8 +140,7 @@ if (isset($_GET['course_id'])) {
         <div class="bgCont1">
             <div class="bgSubCont1">
                 <div class="bgImgCont">
-                    <img class="imgCursos1" src="../img/CursoWeb.png" alt="">
-                    <img class="imgCursos2" src="../img/Cursos Bg.png" alt="">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/LF7sjXW5SZM?si=z9NqXq08np4xSOBS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="bgSubCont2">

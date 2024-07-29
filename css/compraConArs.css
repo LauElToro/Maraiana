@@ -67,6 +67,10 @@ form .inputCont{
     margin-top: 15%;
     margin-bottom: 15%;
 }
+.bgSubCont1 img{
+    width: 350px;
+    height: 350px;
+}
 .bgSubCont2{
     display: none;
 }

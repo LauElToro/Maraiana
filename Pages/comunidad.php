@@ -166,37 +166,38 @@ require_once('..\db\config.php');
 </script>
     <section>
     <div class="popup-overlay" id="popupOverlay">
-            <div class="popup" id="popup">
-                <button class="closeButton" id="closeButton">X</button>
-                    <div class="loginData">
-                        <h2>Inicia sesion</h2>
-                        <img src="../img/Linea.png" alt="">
-                        <form method="POST" id="loginForm">
-                        <label for="email">Email:</label>
-                        <input class="inputEmail" type="text" id="loginEmail" name="email" required><br>
-                        <label for="password">Contraseña:</label>
-                        <input class="inputEmail" type="password" id="password" name="password" required><br>
-                        <input class="inputSubmit" type="submit" value="Iniciar sesión">
-                    </form> 
-                    <p>No tenes una cuenta? <a href="" id="registerLink">Registrate</a></p> 
-                </div>
+        <div class="popup" id="popup">
+            <button class="closeButton" id="closeButton">X</button>
+            <div class="loginData">
+                <h2>Inicia sesión</h2>
+                <img src="../img/Linea.png" alt="">
+                <form method="POST" id="loginForm">
+
+                    <label for="email">Email:</label>
+                    <input class="inputEmail" type="text" id="loginEmail" name="email" required><br>
+                    <label for="password">Contraseña:</label>
+                    <input class="inputPassword" type="password" id="loginPassword" name="password" required><br>
+                    <input class="inputSubmit" type="submit" value="Iniciar sesión">
+                </form>
+                <p>No tienes una cuenta? <a href="#" id="registerLink">Regístrate</a></p>
             </div>
-            <div class="popup2" id="popup2">
-                <button class="closeButton" id="closeButton2">X</button>
-                    <div class="registerData">
-                        <h2>Registrate</h2>
-                        <img src="../img/Linea.png" alt="">
-                        <form method="POST" id="registerForm">
-                            <label for="username">Usuario:</label>
-                            <input class="inputName" type="text" id="registerUsername" name="username" required><br>
-                            <label for="email">Email:</label>
-                            <input class="inputEmail" type="text" id="registerEmail" name="email" required><br>
-                            <label for="password">Contraseña:</label>
-                            <input class="inputPassword" type="password" id="registerPassword" name="password" required><br>
-                            <input type="number" value="2" name="role_id" id="role_id" style="display:none">
-                            <input class="inputSubmit" type="submit" value="Registrar">
-                        </form>
-                    <p>¿Ya tenes una cuenta? <a href="" id="loginLink">Inicia Sesion</a></p>
+        </div>
+        <div class="popup2" id="popup2">
+            <button class="closeButton" id="closeButton2">X</button>
+            <div class="registerData">
+                <h2>Regístrate</h2>
+                <img src="../img/Linea.png" alt="">
+                <form method="POST" id="registerForm">
+                    <label for="username">Usuario:</label>
+                    <input class="inputName" type="text" id="registerUsername" name="username" required><br>
+                    <label for="email">Email:</label>
+                    <input class="inputEmail" type="text" id="registerEmail" name="email" required><br>
+                    <label for="password">Contraseña:</label>
+                    <input class="inputPassword" type="password" id="registerPassword" name="password" required><br>
+                    <input type="number" value="2" name="role_id" id="role_id" style="display:none">
+                    <input class="inputSubmit" type="submit" value="Registrar">
+                </form>
+                <p>¿Ya tienes una cuenta? <a href="#" id="loginLink">Inicia Sesión</a></p>
             </div>
         </div>
     </div>

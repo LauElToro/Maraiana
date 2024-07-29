@@ -18,7 +18,7 @@ section{
 .mandalaCursos{
     position: absolute;
     top: 100%;
-    left: 25%;
+    left: 20%;
 }
 .imgCursos2{
     display: none;
@@ -33,12 +33,17 @@ section{
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 50%;
+}
+.bgImgCont{
+  width: 100%;
 }
 .bgSubCont2{
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    width: 50%;
 }
 .bgH4Cont{
     display: flex;
@@ -303,6 +308,7 @@ footer{
         justify-content: center;
         flex-direction: column;
         margin-top: 3%;
+        overflow:hidden ;
     }
     .imgCursos1{
         display: none;
@@ -311,10 +317,18 @@ footer{
         display: flex;
         width: 550px;
     }
+    .bgSubCont1{ 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+    }
     .bgSubCont2{
         display: flex;
         align-items: center;
         flex-direction: column;
+        width: 100%;
     }
     .bgH4Cont {
         margin-top: 5%;
