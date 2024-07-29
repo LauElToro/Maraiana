@@ -10,6 +10,9 @@
     align-items: center;
     flex-direction: column;
 }
+.cursoImg{
+    width: 600px;
+}
 .comprarCursoCont1{
     width: 100%;
     display: flex;
@@ -128,6 +131,7 @@ footer{
 .bgCompraCont{
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column-reverse;
 }
 .imgCompra{
@@ -185,5 +189,7 @@ footer{
     .footerImg img{
         width: 250px;
     }
-    
+    .cursoImg{
+    width: 100%;
+}  
 }

@@ -430,7 +430,7 @@ if (!empty($courses)) {
             </a>
         </button>
     <?php else: ?>
-        <p>No hay imágenes disponibles.</p>
+        <p>No hay combos disponibles.</p>
     <?php endif; ?>
 </div>
 
