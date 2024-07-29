@@ -2,6 +2,7 @@
 session_start();
 include '../db/config.php';
 
+
 if (!isset($_SESSION['role_id']) || $_SESSION['role_id'] != 1) { // Verificar si el usuario es admin
     header("Location: ../index.php");
     exit();

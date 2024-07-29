@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['role_id']) || $_SESSION['role_id'] != 1) { // Verificar si el usuario es admin
+    header("Location: ../index.php");
+    exit();
+}
 // Configuración de conexión a la base de datos
 $servername = "localhost";
 $username = "root";
