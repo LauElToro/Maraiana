@@ -75,8 +75,8 @@ $_SESSION['email'] = $user['email'];
             </ul>
         </li>
         <li><a href="../Pages/escritorioDelAlumno.php">Escritorio de alumno</a></li>
-        <li style="float: right;"><button class="btn btn-outline-primary navBtn" id="loginButton1"><a href="../User/logout.php">Cerrar Sesión</a></button></li>
-        <li><button class="btn btn-outline-primary navBtn2" id="loginButton2"><a href="../User/logout.php">Cerrar Sesión</a></button></li>
+        <li style="float: right;"><button class="btn btn-outline-primary navBtn"><a href="../User/logout.php">Cerrar Sesión</a></button></li>
+        <li><button class="btn btn-outline-primary navBtn2"><a href="../User/logout.php">Cerrar Sesión</a></button></li>
     </ul>';
             } else {
                 echo '<ul>
