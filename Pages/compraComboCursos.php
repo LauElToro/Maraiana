@@ -1,10 +1,27 @@
 <?php
 session_start();
+include '../db/config.php';
 // Verificar si el usuario está autenticado
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: ../index.php');
     exit();
 }
+
+// Definir la URL base de tu aplicación
+define('BASE_URL', '../'); // Asegúrate de ajustar esto según la URL base real de tu sitio
+
+// Verificar si se han pasado todos los parámetros necesarios
+
+if (isset($_GET['id'], $_GET['course_name'], $_GET['image_path'], $_GET['precio_argentina'], $_GET['precio_internacional'])) {
+    $curso_id = $_GET['id'];
+    $course_name = $_GET['course_name'];
+    $imagenCurso = $_GET['image_path'];
+    $precio_argentina = $_GET['precio_argentina'];
+    $precio_internacional = $_GET['precio_internacional'];
+
+}
+// Construir la ruta de la imagen
+$image_path = BASE_URL . ltrim(htmlspecialchars($imagenCurso), '/');
 ?>
 
 
@@ -80,8 +97,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <section> 
         <div class="bgCompraCont">
                 <?php
-                $valorDeCurso = "$50,000";
-                $valorDeCursoUSD = "80 USD";
+                $valorDeCurso = $precio_argentina;
+                $valorDeCursoUSD = $precio_internacional;
                 ?> 
            
             <div class="cursosCont">
@@ -101,7 +118,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     </button>
                 </div>
             </div>   
-            <img class="comboImgCompra" src="../img/Combo3cursos.png" alt="">
+            <img class="cursoImg" src="<?php echo $image_path; ?>" alt="Imagen del curso">
         </div>
     </section> 
     <footer>
