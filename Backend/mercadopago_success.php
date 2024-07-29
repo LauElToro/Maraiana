@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../db/config.php'; // Asegúrate de que esta ruta es correcta
+require_once '../db/config.php'; 
 require_once '../vendor/autoload.php';
 
 // Verifica que el usuario está autenticado
@@ -32,10 +32,17 @@ if ($status === 'approved' && $payment_id && $external_reference) {
 
     // Asigna el curso al usuario en la base de datos
     try {
+         // Insertar en user_courses
         $stmt = $conn->prepare("INSERT INTO user_courses (user_id, course_id) VALUES (:user_id, :course_id)");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->bindParam(':course_id', $course_id);
         $stmt->execute();
+
+        // Insertar en compras_cursos
+        $stmt2 = $conn->prepare("INSERT INTO compras_cursos (user_id, course_id) VALUES (:user_id, :course_id)");
+        $stmt2->bindParam(':user_id', $user_id);
+        $stmt2->bindParam(':course_id', $course_id);
+        $stmt2->execute();
 
         // Responde con un 200 OK
         http_response_code(200);

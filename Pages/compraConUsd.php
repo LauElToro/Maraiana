@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 // Verificar si el usuario está autenticado
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: ../index.php');
@@ -24,49 +25,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 
-use PayPalCheckoutSdk\Orders\OrdersCreateRequest;
-use PayPalCheckoutSdk\Orders\OrdersCaptureRequest;
-use PayPalCheckoutSdk\Core\PayPalHttpClient;
-use PayPalCheckoutSdk\Core\SandboxEnvironment;
+$endpoint =  /* //"https://api-3t.sandbox.paypal.com/nvp"; Usa  */"https://api-3t.paypal.com/nvp"; // para producción
+$version = "204.0";
+$method = "SetExpressCheckout";
 
-// Configura tu cliente de PayPal
-$clientId = 'YOUR_CLIENT_ID';
-$clientSecret = 'YOUR_CLIENT_SECRET';
-
-$environment = new SandboxEnvironment($clientId, $clientSecret);
-$client = new PayPalHttpClient($environment);
-
-// Crear un nuevo pedido
-$request = new OrdersCreateRequest();
-$request->prefer('return=representation');
-$request->body = [
-    'intent' => 'CAPTURE',
-    'purchase_units' => [
-        [
-            'amount' => [
-                'currency_code' => 'USD',
-                'value' => '80.00' // El monto a pagar
-            ]
-        ]
-    ],
-    'application_context' => [
-        'return_url' => 'http://localhost/maraiana-main/maraiana/Backend/success.php',
-        'cancel_url' => 'http://localhost/maraiana-main/maraiana/Backend/cancel.php'
-    ]
+// Datos para la solicitud
+$data = [
+    'METHOD' => $method,
+    'VERSION' => $version,
+    'USER' => 'mariana.mastropietro.eventos_api1.gmail.com',
+    'PWD' => 'AHMMWVDUXZL8BFG2',
+    'SIGNATURE' => 'AivkqA-4YffFBBGV3wGe3au-MPQxABr91Vusm2sIZ7iH2sOcWeW7mBbI',
+    'RETURNURL' => 'http://localhost/maraiana-main/maraiana/Backend/paypal_success.php',
+    'CANCELURL' => 'http://localhost/maraiana-main/maraiana/Backend/cancel.php',
+    'PAYMENTREQUEST_0_AMT' => $precio,
+    'PAYMENTREQUEST_0_CURRENCYCODE' => 'USD'
 ];
 
-try {
-    $response = $client->execute($request);
-    $approvalUrl = $response->result->links[1]->href; // URL de aprobación
+$queryString = http_build_query($data);
+
+// Enviar solicitud
+$response = file_get_contents($endpoint . '?' . $queryString);
+parse_str($response, $parsedResponse);
+
+// Redirigir al usuario a PayPal
+if (isset($parsedResponse['TOKEN'])) {
+    $approvalUrl = "https://www.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=" . $parsedResponse['TOKEN'];
     header("Location: $approvalUrl");
     exit();
-} catch (Exception $e) {
-    echo "Error: " . $e->getMessage();
+} else {
+    echo "Error en la respuesta de PayPal: " . $response;
 }
+
+// Construir la ruta de la imagen
+$image_path = BASE_URL . ltrim(htmlspecialchars($imagenCurso), '/');
 ?>
 
 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -84,97 +79,98 @@ try {
     <header>
         <nav>
             <div class="redesNavbar">
-                <a href="###"><img  class="youtubeLink"  src="../img/Youtube.png" alt=""></a>
-                <a href="###"><img  class="instagramLink"  src="../img/Instagram.png" alt=""></a>
-                <a href="###"><img  class="wasapLink"  src="../img/Wasap.png" alt=""></a>
-                <a href="###"><img  class="tiktokLink"  src="../img/Tiktok.png" alt=""></a>
-                </div>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <img src="../img/Bars.png" alt="">
-        </label>
-        <a href="../index.php" class="enlace">
-            <img src="../img/Logo2.png" alt="" class="Logo2">
-            <img src="../img/Logo.png" alt="" class="Logo">
-        </a>
-    <?php
-    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-        // Si el usuario está autenticado, mostrar enlace al perfil y al cierre de sesión
-        echo '<ul>
-        <li><a href="../index.php">Inicio</a></li>
-        <li><a href="../Pages/cursos.php">Cursos</a></li>
-        <li><a href="../Pages/comunidad.php">Comunidad</a></li><li class="dropdown">
-            <a href="#" class="dropbtn">Servicios</a>
-            <ul class="dropdown-content">
-                <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
-                <li><a href="../Pages/coachingIndividual.php">Coaching individual</a></li>
-            </ul>
-        </li>
-        <li><a href="../Pages/escritorioDelAlumno.php">Escritorio de alumno</a></li>
-          <li><a href="../User/logout.php">Cerrar Sesión</a></li>
-    </ul>';
-    } else {
-        // Si el usuario no está autenticado, mostrar enlaces de inicio de sesión y registro
-        echo '<ul>
-        <li><a href="../index.php">Inicio</a></li>
-        <li><a href="../Pages/comunidad.php">Comunidad</a></li>
-        <li class="dropdown">
-            <a href="#" class="dropbtn">Servicios</a>
-            <ul class="dropdown-content">
-                <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
-                <li><a href="../Pages/coachingIndividual.php">Coaching individual</a></li>
-            </ul>
-        </li>
-        <li style="float: right;"><button class="btn btn-outline-primary navBtn" id="loginButton1">INGRESAR</button></li>
-        <li><button class="btn btn-outline-primary navBtn2" id="loginButton2">INGRESAR</button></li>
-    </ul>';
-    }
-    ?> 
+                <a href="###"><img class="youtubeLink" src="../img/Youtube.png" alt=""></a>
+                <a href="###"><img class="instagramLink" src="../img/Instagram.png" alt=""></a>
+                <a href="###"><img class="wasapLink" src="../img/Wasap.png" alt=""></a>
+                <a href="###"><img class="tiktokLink" src="../img/Tiktok.png" alt=""></a>
+            </div>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <img src="../img/Bars.png" alt="">
+            </label>
+            <a href="../index.php" class="enlace">
+                <img src="../img/Logo2.png" alt="" class="Logo2">
+                <img src="../img/Logo.png" alt="" class="Logo">
+            </a>
+            <?php
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                // Si el usuario está autenticado, mostrar enlace al perfil y al cierre de sesión
+                echo '<ul>
+                <li><a href="../index.php">Inicio</a></li>
+                <li><a href="../Pages/cursos.php">Cursos</a></li>
+                <li><a href="../Pages/comunidad.php">Comunidad</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Servicios</a>
+                    <ul class="dropdown-content">
+                        <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
+                        <li><a href="../Pages/coachingIndividual.php">Coaching individual</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Pages/escritorioDelAlumno.php">Escritorio de alumno</a></li>
+                <li><a href="../User/logout.php">Cerrar Sesión</a></li>
+                </ul>';
+            } else {
+                // Si el usuario no está autenticado, mostrar enlaces de inicio de sesión y registro
+                echo '<ul>
+                <li><a href="../index.php">Inicio</a></li>
+                <li><a href="../Pages/comunidad.php">Comunidad</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Servicios</a>
+                    <ul class="dropdown-content">
+                        <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
+                        <li><a href="../Pages/coachingIndividual.php">Coaching individual</a></li>
+                    </ul>
+                </li>
+                <li style="float: right;"><button class="btn btn-outline-primary navBtn" id="loginButton1">INGRESAR</button></li>
+                <li><button class="btn btn-outline-primary navBtn2" id="loginButton2">INGRESAR</button></li>
+                </ul>';
+            }
+            ?> 
         </nav>
     </header>
     <section>
         <div class="bgCont1">
-                <?php
-                $valorDeCurso = "80USD";
-                ?> 
+        <?php
+            $valorDeCurso = $precio;
+            ?> 
             <div class="subCont1">
                 <form>
-                <h4>CLIENTE</h4>
-                <div class="inputCont">
-                    <input type="text" placeholder="PAIS" requiered>
-                </div>
-                <div class="inputSubCont1">
-                    <div class="inputCont2">
-                        <input type="text" placeholder="NOMBRE" requiered>
+                    <h4>CLIENTE</h4>
+                    <div class="inputCont">
+                        <input type="text" placeholder="PAIS" required>
                     </div>
-                    <div class="inputCont2">
-                        <input type="text" placeholder="APELLIDO" requiered>
+                    <div class="inputSubCont1">
+                        <div class="inputCont2">
+                            <input type="text" placeholder="NOMBRE" required>
+                        </div>
+                        <div class="inputCont2">
+                            <input type="text" placeholder="APELLIDO" required>
+                        </div>
                     </div>
-                </div>
-                <div class="inputCont">
-                    <input type="number" placeholder="TELEFONO" requiered>
-                </div>
-                <div class="inputSubCont2">
-                    <div class="inputCont2">
-                        <input type="text" placeholder="TIPO DE DNI" requiered>
+                    <div class="inputCont">
+                        <input type="number" placeholder="TELEFONO" required>
                     </div>
-                    <div class="inputCont2">
-                        <input type="number" placeholder="DNI" requiered>
+                    <div class="inputSubCont2">
+                        <div class="inputCont2">
+                            <input type="text" placeholder="TIPO DE DNI" required>
+                        </div>
+                        <div class="inputCont2">
+                            <input type="number" placeholder="DNI" required>
+                        </div>
                     </div>
-                </div>
                 </form>
-                    <img src="../img/paypal.jpeg" width="250" alt="">
+                <img src="../img/paypal.jpeg" width="250" alt="">
             </div>
 
             <div class="subCont2">
-                <div class="bgSubCont1">
+            <div class="bgSubCont1">
                     <h4>PAGO</h4>
-                    <img src="../img/Curso1.png" alt="">
+                    <img src="<?php echo $image_path; ?>" alt="Imagen del curso">
                 </div>
                 <div class="bgSubCont2">
                     <h4>TOTAL</h4>
                     <img src="../img/Linea.png" alt="">
-                    <p class="valorArs"><?php  echo $valorDeCurso; ?></p>
+                    <p class="valorArs"><?php echo htmlspecialchars($valorDeCurso); ?></p>
                     <button>PAGAR</button>
                 </div>
                 <div class="usdImg">
@@ -182,20 +178,19 @@ try {
                 </div>
                 <div class="bgSubCont2Web">
                     <h4>TOTAL</h4>
-                    <p class="valorUsd"><?php  echo $valorDeCurso; ?></p>
+                    <p class="valorUsd"><?php echo htmlspecialchars($valorDeCurso); ?></p>
                 </div>
-                    <button class="arsBtn">PAGAR</button>
+                <button class="arsBtn">PAGAR</button>
             </div>
         </div>
     </section>
     <footer>
         <div class="footerCont">
             <div class="footerImg">
-            <img src="../img/Logo Footer.png" alt="">
+                <img src="../img/Logo Footer.png" alt="">
             </div>
             <div class="footerLinks">
                 <h3>Links Importantes</h3>
-                <!--   <a href="./Pages/cursos.php">Cursos</a> -->
                 <a href="../Pages/comunidad.php">Comunidad</a>
                 <a href="../Pages/clasesGrupales.php">Clases grupales</a>
                 <a href="../Pages/coachingIndividual.php">Coaching individual</a>
