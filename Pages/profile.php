@@ -7,8 +7,11 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: ../index.php');
     exit();
 }
+
 // Obtener datos del usuario desde la base de datos
 $user_id = $_SESSION['user_id'];
+
+// Consulta para obtener datos del usuario
 $stmt = $conn->prepare("SELECT username, email FROM users WHERE id = ?");
 $stmt->execute([$user_id]);
 $user = $stmt->fetch();
@@ -18,10 +21,16 @@ if (!$user) {
     exit();
 }
 
+// Consulta para contar la cantidad de cursos contratados por el usuario
+$stmt = $conn->prepare("SELECT COUNT(course_id) AS course_count FROM user_courses WHERE user_id = ?");
+$stmt->execute([$user_id]);
+$course_count = $stmt->fetchColumn();
+
 // Establecer las variables de sesión
 $_SESSION['username'] = $user['username'];
 $_SESSION['email'] = $user['email'];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,7 +85,7 @@ $_SESSION['email'] = $user['email'];
             ?>
         </nav><br>
         <div>
-            <h1>hola <?php echo htmlspecialchars($_SESSION['username']); ?> </h1>
+            <h1>Hola, <?php echo htmlspecialchars($_SESSION['username']); ?> </h1>
         </div>
     </header>
     <div class="btn-menu">
@@ -119,7 +128,7 @@ $_SESSION['email'] = $user['email'];
                     <p>Email: <?php echo htmlspecialchars($_SESSION['email']); ?></p>
                 </div>
                 <div class="perfilDataCont">
-                    <p>Cursos: 0</p>
+                    <p>Cursos contratados: <?php echo htmlspecialchars($course_count); ?></p>
                 </div>
                 <div class="perfilDataButtons">
                     <button><a href="./cursos.php">Adquirir cursos</a></button>
@@ -129,3 +138,4 @@ $_SESSION['email'] = $user['email'];
     </section>
 </body>
 </html>
+
