@@ -2,12 +2,12 @@
 session_start();
 
 include '../db/config.php';
-/* 
+
 // Verificar si el usuario está autenticado
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: ../index.php');
     exit();
-} */
+}
 
 // Obtener datos del usuario desde la base de datos
 $user_id = $_SESSION['user_id'];
@@ -140,9 +140,7 @@ $_SESSION['email'] = $user['email'];
                 <button>
                     <a href="./coachingIndividual.php">Coaching</a>
                 </button>        
-                <button>
-                    <a href="./preguntas.php">Salir</a>
-                </button>
+                <button><a href="../User/logout.php">Salir</a></button>
         </div>
         <div class="preguntasData">
             <div class="preguntasDataCont">
@@ -157,9 +155,12 @@ $_SESSION['email'] = $user['email'];
             <strong>¿Qué pasa si falto a una clase?</strong>
             <p>Las clases se graban y se envían para que puedas verlas y hacer los ejercicios, siempre dentro del mes en curso. A través del grupo de whatsapp podés consultarle a Mariana lo que necesites.</p>
             </div>
-        <button>
-            <a href="">Contacto</a>
-        </button>
+            <div class="bgBtnCont">
+                    <button>
+                        <img src="../img/Wasap.png" alt=""><a href="https://api.whatsapp.com/send/?phone=5491140431611&text=%C2%A1Hola!%20Soy%20residente%20de%20Argentina,%20solicito%20informaci%C3%B3n%20del%20Coaching%20individual%20con%20la%20profesora%20Mariana%C2%A0Mastropietro." >Consultar</a>
+                    </button>
+                    
+                </div>      
 
         </div>
     </div>

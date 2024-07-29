@@ -128,9 +128,9 @@ if (isset($_GET['course_id'])) {
             <button>
                 <a href="./coachingIndividual.php">Coaching</a>
             </button>        
-            <button>
-                Salir
-            </button>
+
+            <button><a href="../User/logout.php">Salir</a></button>
+
         </div>
         <div class="cursoEscritorioData">
             <div class="cursoData">

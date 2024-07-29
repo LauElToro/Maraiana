@@ -1,13 +1,12 @@
 <?php
 session_start();
 include '../db/config.php';
-/* 
+
 // Verificar si el usuario está autenticado
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: ../index.php');
     exit();
-} */
-
+}
 // Obtener datos del usuario desde la base de datos
 $user_id = $_SESSION['user_id'];
 $stmt = $conn->prepare("SELECT username, email FROM users WHERE id = ?");
@@ -119,7 +118,7 @@ $_SESSION['email'] = $user['email'];
                 <button><a href="./comunidad.php">Comunidad</a></button>
                 <button><a href="./clasesGrupales.php">Clases grupales</a></button>
                 <button><a href="./coachingIndividual.php">Coaching</a></button>
-                <button><a href="../logout.php">Salir</a></button>
+                <button><a href="../User/logout.php">Salir</a></button>
             </div>
             <div class="perfilData">
                 <div class="perfilDataCont">
