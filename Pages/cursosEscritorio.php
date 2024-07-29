@@ -1,4 +1,23 @@
+<?php
+session_start();
+include '../db/config.php'; // Asegúrate de que este archivo contenga la configuración de tu conexión PDO
+define('BASE_URL', 'http://localhost/Cursos/'); // Asegúrate de que esta es la URL correcta para tu proyecto
 
+if (isset($_GET['course_id'])) {
+    $curse_id = $_GET['course_id'];
+
+    // Obtener datos del curso
+    $course_query = $conn->prepare("SELECT * FROM courses WHERE id = :id");
+    $course_query->execute([':id' => $course_id]);
+    $course = $course_query->fetch(PDO::FETCH_ASSOC);
+
+    // Obtener detalles del curso
+    $details_query = $conn->prepare("SELECT * FROM course_details WHERE course_id = :course_id");
+    $details_query->execute([':course_id' => $course_id]);
+    $course_details = $details_query->fetch(PDO::FETCH_ASSOC);
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,8 +130,8 @@
         </div>
         <div class="cursoEscritorioData">
             <div class="cursoData">
-                <h4>Continuar curso</h4>
-                <img src="../img/Cursos img.png" alt="">                
+            <h4>Continuar curso</h4> <a href="curso.php">
+            <img src="../img/Cursos img.png" alt="">  </a>                 
             </div>
             <div class="cursoBtnData">
                 <button>

@@ -35,8 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['create_course'])) {
     $stmt->bindParam(':precio_argentina', $precio_argentina);
     $stmt->bindParam(':precio_internacional', $precio_internacional);
     $stmt->execute();
-
-    echo json_encode(["message" => "Curso creado con éxito."]);
 }
 
 // Crear parte del curso

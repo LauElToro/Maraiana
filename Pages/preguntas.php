@@ -115,12 +115,12 @@
                 <p>Solo necesitás dar click al botón de WhatsApp para ponernos en contacto.Te preguntaremos si sos residente de argentina o del exterior y te enviaremos la información de los valores y formas de pago.</p>
             </div>
             <div class="preguntasDataCont">
-                <strong>¿Cómo me sumo a las clases?</strong>
-                <p>Solo necesitás dar click al botón de WhatsApp para ponernos en contacto.Te preguntaremos si sos residente de argentina o del exterior y te enviaremos la información de los valores y formas de pago.</p>
+            <strong>¿El pago es anticipado o se puede abonar después?</strong>
+            <p>El pago es anticipado. Una vez que nos enviás tu comprobante de pago, te agregamos al grupo de Whatsapp y te enviamos la información de conexión</p>
             </div>
             <div class="preguntasDataCont">
-                <strong>¿Cómo me sumo a las clases?</strong>
-                <p>Solo necesitás dar click al botón de WhatsApp para ponernos en contacto.Te preguntaremos si sos residente de argentina o del exterior y te enviaremos la información de los valores y formas de pago.</p>
+            <strong>¿Qué pasa si falto a una clase?</strong>
+            <p>Las clases se graban y se envían para que puedas verlas y hacer los ejercicios, siempre dentro del mes en curso. A través del grupo de whatsapp podés consultarle a Mariana lo que necesites.</p>
             </div>
         <button>
             <a href="">Contacto</a>

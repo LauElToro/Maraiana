@@ -106,9 +106,7 @@ session_start();
                 <button>
                     <a href="./coachingIndividual.php">Coaching</a>
                 </button>        
-                <button>
-                    Salir
-                </button>
+                <a href="../User/logout.php">Salir</a>
                 
         </div>
         <div class="escritorioData">
