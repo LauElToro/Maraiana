@@ -7,6 +7,15 @@ namespace Composer\Autoload;
 class ComposerStaticInitfd45e2f65864005d39f153fb04d57de3
 {
     public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'Sample\\' => 7,
+        ),
+        'P' => 
+        array (
+            'PayPalHttp\\' => 11,
+            'PayPalCheckoutSdk\\' => 18,
+        ),
         'M' => 
         array (
             'MercadoPago\\' => 12,
@@ -14,6 +23,18 @@ class ComposerStaticInitfd45e2f65864005d39f153fb04d57de3
     );
 
     public static $prefixDirsPsr4 = array (
+        'Sample\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paypal/paypal-checkout-sdk/samples',
+        ),
+        'PayPalHttp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paypal/paypalhttp/lib/PayPalHttp',
+        ),
+        'PayPalCheckoutSdk\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paypal/paypal-checkout-sdk/lib/PayPalCheckoutSdk',
+        ),
         'MercadoPago\\' => 
         array (
             0 => __DIR__ . '/..' . '/mercadopago/dx-php/src/MercadoPago',

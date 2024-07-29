@@ -1,5 +1,71 @@
 <?php
 session_start();
+// Verificar si el usuario está autenticado
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: ../index.php');
+    exit();
+}
+
+// Definir la URL base de tu aplicación
+define('BASE_URL', 'http://localhost/Cursos/'); // Asegúrate de ajustar esto según la URL base real de tu sitio
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['course_id'], $_POST['course_name'], $_POST['image_path'], $_POST['precio'])) {
+        $course_id = htmlspecialchars($_POST['course_id']);
+        $course_name = htmlspecialchars($_POST['course_name']);
+        $imagenCurso = htmlspecialchars($_POST['image_path']);
+        $precio = floatval($_POST['precio']);
+    } else {
+        echo "Faltan parámetros en la solicitud.";
+        exit;
+    }
+} else {
+    echo "Método de solicitud no permitido.";
+    exit;
+}
+
+use PayPalCheckoutSdk\Orders\OrdersCreateRequest;
+use PayPalCheckoutSdk\Orders\OrdersCaptureRequest;
+use PayPalCheckoutSdk\Core\PayPalHttpClient;
+use PayPalCheckoutSdk\Core\SandboxEnvironment;
+
+// Configura tu cliente de PayPal
+$clientId = 'YOUR_CLIENT_ID';
+$clientSecret = 'YOUR_CLIENT_SECRET';
+
+$environment = new SandboxEnvironment($clientId, $clientSecret);
+$client = new PayPalHttpClient($environment);
+
+// Crear un nuevo pedido
+$request = new OrdersCreateRequest();
+$request->prefer('return=representation');
+$request->body = [
+    'intent' => 'CAPTURE',
+    'purchase_units' => [
+        [
+            'amount' => [
+                'currency_code' => 'USD',
+                'value' => '80.00' // El monto a pagar
+            ]
+        ]
+    ],
+    'application_context' => [
+        'return_url' => 'http://localhost/maraiana-main/maraiana/Backend/success.php',
+        'cancel_url' => 'http://localhost/maraiana-main/maraiana/Backend/cancel.php'
+    ]
+];
+
+try {
+    $response = $client->execute($request);
+    $approvalUrl = $response->result->links[1]->href; // URL de aprobación
+    header("Location: $approvalUrl");
+    exit();
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+}
+?>
+
+
 ?>
 
 <!DOCTYPE html>

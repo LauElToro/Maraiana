@@ -1,6 +1,10 @@
 <?php
 session_start();
 include 'db/config.php';
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../index.php.php");
+    exit();
+}
 
 $course_id = $_GET['course_id'];
 $user_id = $_SESSION['user_id'];

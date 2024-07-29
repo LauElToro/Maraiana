@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../index.php.php");
+    exit();
+}
 // Configuración de PayPal (esto es solo un ejemplo básico)
 $paypal_url = 'https://www.sandbox.paypal.com/cgi-bin/webscr';
 $business_email = 'tu_email_de_paypal@dominio.com';
