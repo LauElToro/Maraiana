@@ -127,6 +127,131 @@ footer{
     align-items: center;
     flex-direction: column;
 }
+/*ESTILOS DEL BUTTON RESPONSIVO*/
+#btn-menu{
+    display: none;
+}
+.btn-menu{
+    display: none;
+}
+.container-menu{
+    position: absolute;
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    top: 0;left: 0;
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 250;
+}
+#btn-menu:checked ~ .container-menu{
+    opacity: 1;
+    visibility: visible;
+}
+.cont-menu{
+    margin-top: 85px;
+    width: 100%;
+    max-width: 250px;
+    background: #1c1c1c;
+    height: 100vh;
+    position: relative;
+    transition: all 500ms ease;
+    transform: translateX(-100%);
+}
+#btn-menu:checked ~ .container-menu .cont-menu{
+    transform: translateX(0%);
+}
+.cont-menu nav a{
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    color: #c7c7c7;
+    border-left: 5px solid transparent;
+    transition: all 400ms ease;
+}
+.cont-menu label{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+}
+.navCont p{
+    display: flex;
+}
+
+@media screen and (max-width:991px) {
+    /*Menù lateral*/
+    .escritorioButtons{
+        display: none;
+    }
+    .bgEscritorio{
+        width: 100%;
+    }
+    .escritorioData{
+        margin: auto;
+    }
+    .btn-menu{
+        display: flex;
+        font-size: 35px;
+        margin-left: 5%;
+    }
+    .navCont p{
+        display: none;
+    }
+    .cont-menu{
+        z-index: 300;
+        background-color: #c7c7c7;
+    }
+    .cont-menu p{
+        padding-top: 15%;
+        padding-bottom: 5%;
+        text-align: center;
+        color: #000;
+        font-weight: 700;
+        font-size: 25px;
+    }
+    .cont-menu img{
+        width: 100%;
+    }
+    .ul1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 95%;
+        padding-top: 5%;
+    }
+    .ul1 li{
+        margin-bottom: 5%;
+        width: 95%;
+        text-align: center;
+        background-color: #3B035F;
+        padding: 15px 0px;
+        border-radius: 20px;
+    }
+    .ul1 li a{
+        text-align: center;
+        text-decoration: none;
+        font-size: 20px;
+        color: #fff;
+        font-weight: 600;
+    }
+    .data1 img{
+        top: 15%;
+    }
+    .data2 img{
+        top: 15%;
+    }
+    .data3 img{
+        top: 15%;
+    }
+
+
+}
+
+
 @media (max-width: 768px) {
     .bgPerfil{
         display: flex;
