@@ -26,6 +26,11 @@ use MercadoPago\MercadoPagoConfig;
 // Reemplaza con tu ACCESS_TOKEN válido
 MercadoPagoConfig::setAccessToken("APP_USR-214004285591922-070212-07575a2c44625256a88a0f5965cfbbd2-71530083");
 
+/* //MP Mariana
+MercadoPagoConfig::setAccessToken
+("APP_USR-7090587000298386-070313-b07df82ee208ff0b32418ffaa9912fb8-45636863"); */
+
+
 $client = new PreferenceClient();
 
 $items = [
@@ -42,11 +47,10 @@ try {
     $preference = $client->create([
         "items" => $items,
         "statement_descriptor" => "mariano",
-        "external_reference" => "CDP001",
+        "external_reference" =>  "$course_id",
         "back_urls" => [
-            "success" => "http://localhost/cursos/Cursos/Backend/mercadopago_success.php?course_id=$course_id",
-/*             "failure" => "http://localhost/cursos/Cursos/Backend/mercadopago_failure.php",
-            "pending" => "http://localhost/cursos/Cursos/Backend/mercadopago_pending.php" */
+            "success" => "http://localhost/maraiana-main/maraiana/Backend/mercadopago_success.php?course_id=$course_id", //cambiar ruta segun estructura del proyecto
+
         ],
     ]);
 

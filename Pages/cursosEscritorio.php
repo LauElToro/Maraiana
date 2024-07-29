@@ -137,33 +137,29 @@ $user_courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         </div>
         <div class="cursoEscritorioData">
-            <?php if (!empty($user_courses)): ?>
-                <?php foreach ($user_courses as $course): ?>
-                    <div class="cursoData">
-                        <h4>Continuar curso</h4>
-                            <div class="bgEscritorio" >
-                            <a href="curso.php">
-                                <div>
-                                    <img src="../img/Cursos img.png" alt="">
-                                </div>
-                            </a>
-                            <a href="curso.php">
-                                <div class="course" >
-                                    <img  width="250" src="<?php echo BASE_URL . '/' . htmlspecialchars($course['image_path']); ?>" alt="Curso">
-                                </div>
-                            </a>
+    <?php if (!empty($user_courses)): ?>
+        <?php foreach ($user_courses as $course): ?>
+            <div class="cursoData">
+                <h4>Continuar curso</h4>
+                <div class="bgEscritorio">
+                    <a href="curso.php">
+                        <div class="course">
+                            <img width="250" src="<?php echo BASE_URL . '/' . htmlspecialchars($course['image_path']); ?>" alt="Curso">
                         </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p>No hay cursos disponibles.</p>
-            <?php endif; ?>
-            <div class="cursoBtnData">
-                <button>
-                    <a href="./cursos.php">Adquirir cursos</a>
-                </button>
+                    </a>
+                </div>
             </div>
-        </div>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p>No hay cursos disponibles.</p>
+    <?php endif; ?>
+    <div class="cursoBtnData">
+        <button>
+            <a href="./cursos.php">Adquirir cursos</a>
+        </button>
+    </div>
+</div>
+
 
     </div>
 </body>
