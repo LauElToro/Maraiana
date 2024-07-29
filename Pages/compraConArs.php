@@ -130,7 +130,7 @@ $image_path = BASE_URL . ltrim(htmlspecialchars($imagenCurso), '/');
             </ul>
         </li>
         <li><a href="../Pages/escritorioDelAlumno.php">Escritorio de alumno</a></li>
-        <li><a href="../Pages/logout.php">Cerrar Sesión</a></li>
+         <li><a href="../User/logout.php">Cerrar Sesión</a></li>
     </ul>';
             } else {
                 // Si el usuario no está autenticado, mostrar enlaces de inicio de sesión y registro

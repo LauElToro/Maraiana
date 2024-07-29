@@ -1,18 +1,17 @@
 <?php
-require '../auth.php';
-// Verificar si el usuario está logueado
-require_login();
-
+session_start();
 include '../db/config.php';
 
 // Verificar si el usuario está autenticado
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: ../index.php');
     exit();
-} 
+}
 
 // Obtener datos del usuario desde la base de datos
 $user_id = $_SESSION['user_id'];
+
+// Consulta para obtener datos del usuario
 $stmt = $conn->prepare("SELECT username, email FROM users WHERE id = ?");
 $stmt->execute([$user_id]);
 $user = $stmt->fetch();
@@ -22,10 +21,14 @@ if (!$user) {
     exit();
 }
 
+// Consulta para contar la cantidad de cursos contratados por el usuario
+$stmt = $conn->prepare("SELECT COUNT(course_id) AS course_count FROM user_courses WHERE user_id = ?");
+$stmt->execute([$user_id]);
+$course_count = $stmt->fetchColumn();
+
 // Establecer las variables de sesión
 $_SESSION['username'] = $user['username'];
 $_SESSION['email'] = $user['email'];
-
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +75,7 @@ $_SESSION['email'] = $user['email'];
             </ul>
         </li>
         <li><a href="../Pages/escritorioDelAlumno.php">Escritorio de alumno</a></li>
-        <li><a href="../Pages/logout.php">Cerrar Sesión</a></li>
+        <li><a href="../User/logout.php">Cerrar Sesión</a></li>
     </ul>';
     } else {
         // Si el usuario no está autenticado, mostrar enlaces de inicio de sesión y registro
@@ -149,11 +152,11 @@ $_SESSION['email'] = $user['email'];
         <div class="escritorioData">
             <div class="data1">
                 <img src="../img/Libro.png" alt=""> 
-                <p>0<br>Cursos Inscriptos</p>             
+                <p><?php echo htmlspecialchars($course_count); ?><br>Cursos Inscriptos</p>             
             </div>
             <div class="data2">
                 <img src="../img/Persona2.png" alt=""> 
-                <p>0<br>Cursos en proceso</p>             
+                <p><?php echo htmlspecialchars($course_count); ?><br>Cursos en proceso</p>             
             </div>
             <div class="data3">
                 <img src="../img/Trofeo.png" alt=""> 

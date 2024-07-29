@@ -141,7 +141,7 @@ window.onclick = function(event) {
             <a href="#" class="dropbtn">Servicios</a>
             <ul class="dropdown-content">
                 <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
-                <li><a href="../Pages/coachingIndividual.php">Coaching individual</a></li>
+                  <li><a href="../User/logout.php">Cerrar Sesión</a></li>
             </ul>
         </li>
         <li><a href="../Pages/escritorioDelAlumno.php">Escritorio de alumno</a></li>

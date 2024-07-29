@@ -22,10 +22,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['loggedin'] = true;
 
             // Redirigir según el rol del usuario
-            if ($user['role_id'] == 1) {
-                $redirect_url = 'admin/dashboard.php';
-            } else if ($user['role_id'] == 2) {
-                $redirect_url = 'pages/escritorioDelAlumno.php';
+            if ($user['role_id'] === 1) {
+                $redirect_url = '../admin/dashboard.php';
+            } else if ($user['role_id'] === 2) {
+                $redirect_url = '../Pages/escritorioDelAlumno.php';
             }
 
             // Enviar respuesta JSON con la información de la sesión y la URL de redirección
