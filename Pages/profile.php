@@ -110,7 +110,7 @@ $_SESSION['email'] = $user['email'];
                 <button><a href="./comunidad.php">Comunidad</a></button>
                 <button><a href="./clasesGrupales.php">Clases grupales</a></button>
                 <button><a href="./coachingIndividual.php">Coaching</a></button>
-                <button><a href="../logout.php">Salir</a></button>
+                <button><a href="../User/logout.php">Salir</a></button>
             </div>
             <div class="perfilData">
                 <div class="perfilDataCont">
