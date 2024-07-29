@@ -6,6 +6,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: ../index.php');
     exit();
 }
+
 // Definir la URL base de tu aplicación
 define('BASE_URL', '../'); // Asegúrate de ajustar esto según la URL base real de tu sitio
 
