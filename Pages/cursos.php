@@ -433,6 +433,27 @@ window.onclick = function(event) {
             </div>
         </div>
     </div>
+    <?php 
+    // Preparar la consulta SQL para obtener los cursos cuya imagen contenga la palabra "combo"
+$course_query = $conn->prepare("SELECT * FROM courses WHERE image_path LIKE :image_keyword");
+
+// Ejecutar la consulta con el parámetro adecuado
+$course_query->execute([':image_keyword' => '%combo%']);
+
+// Obtener los resultados
+$courses = $course_query->fetchAll(PDO::FETCH_ASSOC);
+
+// Iterar sobre los resultados y procesarlos según sea necesario
+foreach ($courses as $course) {
+    echo "ID: " . $course['id'] . "<br>";
+    echo "Course Name: " . $course['course_name'] . "<br>";
+    echo "Image Path: " . $course['image_path'] . "<br>";
+    echo "Precio Argentina: " . $course['precio_argentina'] . "<br>";
+    echo "Precio Internacional: " . $course['precio_internacional'] . "<br>";
+    echo "<br>";
+}
+
+    ?>
     <div class="comboCursosBg">
             <img src="../img/Combo3cursos.png" alt="">
             <button class="contratarBtn2"><a href="compraComboCursos.php">Ver este combo</a></button>
