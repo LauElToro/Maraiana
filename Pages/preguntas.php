@@ -152,9 +152,9 @@ $_SESSION['email'] = $user['email'];
             </div>
             <div class="bgBtnCont">
                     <button>
-                        <a href="https://api.whatsapp.com/send/?phone=5491140431611&text=%C2%A1Hola!%20Soy%20residente%20de%20Argentina,%20solicito%20informaci%C3%B3n%20del%20Coaching%20individual%20con%20la%20profesora%20Mariana%C2%A0Mastropietro." >Consultar</a>
+                        <img src="../img/Wasap.png" alt=""><a href="https://api.whatsapp.com/send/?phone=5491140431611&text=%C2%A1Hola!%20Soy%20residente%20de%20Argentina,%20solicito%20informaci%C3%B3n%20del%20Coaching%20individual%20con%20la%20profesora%20Mariana%C2%A0Mastropietro." >Consultar</a>
                     </button>
-                    <img src="../img/Wasap.png" alt="">
+                    
                 </div>      
 
         </div>
