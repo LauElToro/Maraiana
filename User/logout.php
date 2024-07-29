@@ -1,16 +1,14 @@
 <?php
-// Iniciar la sesión
-session_start();
+require 'auth.php';
 
-// Eliminar todas las variables de sesión
-$_SESSION = array();
+// Cerrar sesión
+logout();
 
-// Si se usa una cookie de sesión, eliminar
-
-// Destruir la sesión
-session_destroy();
-
-// Redirigir al usuario a la página de inicio o de inicio de sesión
-header("Location: ../index.php");
-exit();
+function logout() {
+    session_start();
+    session_unset();
+    session_destroy();
+    header('Location: ../index.php'); // Redirige a la página de inicio
+    exit();
+}
 ?>

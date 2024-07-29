@@ -1,5 +1,8 @@
 <?php
-session_start();
+require '../auth.php';
+
+// Verificar si el usuario está logueado
+require_login();
 
 include '../db/config.php';
 /* 
@@ -59,11 +62,11 @@ $_SESSION['email'] = $user['email'];
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
         // Si el usuario está autenticado, mostrar enlace al perfil y al cierre de sesión
         echo '<ul>
-        <!--         <li><a href="../Pages/cursos.php">Cursos</a></li> -->
-                <li><a href="../Pages/comunidad.php">Comunidad</a></li>
-                <li><a href="../Pages/clasesGrupales.php">Clases grupales</a></li>
-                <li><a href="../Pages/coachingIndividual.php">Coaching individual<a><li>
-                <li><a href="../Pages/escritorioDelAlumno.php">Escritorio de alumno<a><li>
+        <!--         <li><a href="cursos.php">Cursos</a></li> -->
+                <li><a href="comunidad.php">Comunidad</a></li>
+                <li><a href="clasesGrupales.php">Clases grupales</a></li>
+                <li><a href="coachingIndividual.php">Coaching individual<a><li>
+                <li><a href="escritorioDelAlumno.php">Escritorio de alumno<a><li>
               </ul>';
     } else {
         // Si el usuario no está autenticado, mostrar enlaces de inicio de sesión y registro

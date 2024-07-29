@@ -1,6 +1,7 @@
 <?php
 // Asegúrate de que esta línea esté en el principio del archivo
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -95,7 +96,9 @@ window.onclick = function(event) {
     </div>
   <!-- JavaScript para mostrar y ocultar el popup  -->
   <?php
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+require 'auth.php';
+
+if (is_logged_in()) {
     echo '<ul>
         <li><a href="./Pages/comunidad.php">Comunidad</a></li>
         <li><a href="./Pages/clasesGrupales.php">Clases grupales</a></li>
