@@ -126,6 +126,7 @@ footer{
     align-items: center;
     flex-direction: column;
 }
+
 @media (max-width: 768px){
 .bgPreguntas{
     display: flex;
@@ -165,8 +166,8 @@ footer{
     align-items: center;
     flex-direction: column;
     margin-top: 5%;
-    width: 65%;
-    height: 82vh;
+    width: 90%;
+    height: auto;
     background-color: #D9D9D9;
     border-radius: 20px;
 }

@@ -331,9 +331,8 @@ footer{
     flex-direction: column;
     margin-top: 10%;
     margin: auto;
-    width: 75%;
-    height: 80vh;
-    border: 2px solid #000;
+    width: 90%;
+    height: auto;
     border-radius: 20px;
 }
 .data1{
