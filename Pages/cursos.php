@@ -199,7 +199,7 @@ if (isset($_GET['course_id'])) {
     </div>
     <div class="comboCursosBg">
             <img src="../img/Combo3cursos.png" alt="">
-            <button class="contratarBtn2"><a href="#">Ver este combo</a></button>
+            <button class="contratarBtn2"><a href="compraComboCursos.php">Ver este combo</a></button>
         </div>
 
 </body>

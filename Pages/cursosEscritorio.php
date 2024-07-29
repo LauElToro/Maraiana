@@ -130,8 +130,8 @@ if (isset($_GET['course_id'])) {
         </div>
         <div class="cursoEscritorioData">
             <div class="cursoData">
-            <h4>Continuar curso</h4> <a href="curso.php">
-            <img src="../img/Cursos img.png" alt="">  </a>                 
+                <h4>Continuar curso</h4> <a href="curso.php">
+                <img src="../img/Cursos img.png" alt="">  </a>              
             </div>
             <div class="cursoBtnData">
                 <button>
