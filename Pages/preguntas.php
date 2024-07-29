@@ -135,9 +135,7 @@ $_SESSION['email'] = $user['email'];
                 <button>
                     <a href="./coachingIndividual.php">Coaching</a>
                 </button>        
-                <button>
-                    <a href="./preguntas.php">Salir</a>
-                </button>
+                <button><a href="../User/logout.php">Salir</a></button>
         </div>
         <div class="preguntasData">
             <div class="preguntasDataCont">
