@@ -231,7 +231,7 @@ require_once('..\db\config.php');
                     localStorage.setItem('email', data.email);
                     localStorage.setItem('role_id', data.role_id);
                     alert('Login exitoso');
-                     window.location.href = 'escritorioDelAlumno.php';
+                     window.location.href = 'Pages/escritorioDelAlumno.php';
                 } else {
                     alert(data.message);
                 }

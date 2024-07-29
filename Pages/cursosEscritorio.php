@@ -1,23 +1,27 @@
 <?php
 session_start();
 include '../db/config.php'; // Asegúrate de que este archivo contenga la configuración de tu conexión PDO
-define('BASE_URL', 'http://localhost/Cursos/'); // Asegúrate de que esta es la URL correcta para tu proyecto
+define('BASE_URL', 'http://localhost/Cursos'); // Asegúrate de que esta es la URL correcta para tu proyecto
 
-if (isset($_GET['course_id'])) {
-    $curse_id = $_GET['course_id'];
-
-    // Obtener datos del curso
-    $course_query = $conn->prepare("SELECT * FROM courses WHERE id = :id");
-    $course_query->execute([':id' => $course_id]);
-    $course = $course_query->fetch(PDO::FETCH_ASSOC);
-
-    // Obtener detalles del curso
-    $details_query = $conn->prepare("SELECT * FROM course_details WHERE course_id = :course_id");
-    $details_query->execute([':course_id' => $course_id]);
-    $course_details = $details_query->fetch(PDO::FETCH_ASSOC);
+// Verifica si el usuario está autenticado y tiene un user_id en la sesión
+if (!isset($_SESSION['user_id'])) {
+    die('Acceso denegado. Debes iniciar sesión.');
 }
 
+$user_id = $_SESSION['user_id'];
+
+// Obtener cursos contratados por el usuario con la ruta de la imagen
+$stmt = $conn->prepare("
+    SELECT c.image_path 
+    FROM user_courses uc 
+    JOIN courses c ON uc.course_id = c.id 
+    WHERE uc.user_id = ?
+");
+$stmt->execute([$user_id]);
+$user_courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -133,16 +137,34 @@ if (isset($_GET['course_id'])) {
 
         </div>
         <div class="cursoEscritorioData">
-            <div class="cursoData">
-                <h4>Continuar curso</h4> <a href="curso.php">
-                <img src="../img/Cursos img.png" alt="">  </a>              
-            </div>
+            <?php if (!empty($user_courses)): ?>
+                <?php foreach ($user_courses as $course): ?>
+                    <div class="cursoData">
+                        <h4>Continuar curso</h4>
+                            <div class="bgEscritorio" >
+                            <a href="curso.php">
+                                <div>
+                                    <img src="../img/Cursos img.png" alt="">
+                                </div>
+                            </a>
+                            <a href="curso.php">
+                                <div class="course" >
+                                    <img  width="250" src="<?php echo BASE_URL . '/' . htmlspecialchars($course['image_path']); ?>" alt="Curso">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>No hay cursos disponibles.</p>
+            <?php endif; ?>
             <div class="cursoBtnData">
                 <button>
-                <a href="./cursos.php">Adquirir cursos</a>
+                    <a href="./cursos.php">Adquirir cursos</a>
                 </button>
             </div>
         </div>
+
     </div>
 </body>
 </html>

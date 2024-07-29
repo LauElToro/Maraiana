@@ -110,7 +110,7 @@ if (is_logged_in()) {
             </ul>
         </li>
         <li><a href="./Pages/escritorioDelAlumno.php">Escritorio de alumno</a></li>
-        <li><a href="User/logout.php">Cerrar Sesión</a></li>
+        <li><a href="user/logout.php">Cerrar Sesión</a></li>
     </ul>';
 } else {
     echo '<ul>
