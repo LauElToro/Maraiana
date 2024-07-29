@@ -150,9 +150,12 @@ $_SESSION['email'] = $user['email'];
             <strong>¿Qué pasa si falto a una clase?</strong>
             <p>Las clases se graban y se envían para que puedas verlas y hacer los ejercicios, siempre dentro del mes en curso. A través del grupo de whatsapp podés consultarle a Mariana lo que necesites.</p>
             </div>
-        <button>
-            <a href="">Contacto</a>
-        </button>
+            <div class="bgBtnCont">
+                    <button>
+                        <a href="https://api.whatsapp.com/send/?phone=5491140431611&text=%C2%A1Hola!%20Soy%20residente%20de%20Argentina,%20solicito%20informaci%C3%B3n%20del%20Coaching%20individual%20con%20la%20profesora%20Mariana%C2%A0Mastropietro." >Consultar</a>
+                    </button>
+                    <img src="../img/Wasap.png" alt="">
+                </div>      
 
         </div>
     </div>
