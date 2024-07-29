@@ -381,7 +381,7 @@ window.onclick = function(event) {
             <div class="contModal">
                 <div class="divModalImg">
                     <img id="modalImg" src="" alt="">
-                    <a id="btnVerMas" href="#" class="btn btn-info">Ver más</a>
+                    <a id="btnVerMas" href="#" class="btn-info">Ver más</a>
                 </div>
                 <div class="modalContent">
                     <h2>En este curso aprenderas:</h2>

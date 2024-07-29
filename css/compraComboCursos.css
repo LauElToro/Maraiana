@@ -127,6 +127,35 @@ footer{
 .comboImgCompra{
     width: 650px;
 }
+
+.mp{
+    margin-top: 5%;
+    background-color: #239CDC;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.pp{
+    margin-top: 5%;
+    background-color: #233FDC;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.mp:hover{
+    background-color: #0376B3;
+}
+.pp:hover{
+    background-color: #4F64DD;
+}
 @media (max-width: 1199px){
 .bgCompraCont{
     display: flex;
